@@ -1,0 +1,169 @@
+html {
+  --color-accent: oklch(65% 50% 0);
+  color-scheme: light dark;
+}
+
+body {
+    /* Set line height to 1.5 times the font size
+       and use the OS’s UI font as the website font
+     */
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 5%;
+    accent-color: var(--color-accent);
+    }
+
+ul {
+    display: contents;
+    }
+
+li {
+    display: contents;
+    color: inherit
+    }
+
+nav {
+    --border-color: oklch(50% 10% 200 / 40%);
+    display: flex;
+    margin-bottom: 0.5em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    }
+
+a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+    }
+
+a.current {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+  padding-bottom: 0.25em;
+    }
+
+a.hover {
+  accent-color: var(--color-accent);
+}
+
+img {
+  max-width: 100%
+}
+form {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: auto 1fr;
+}
+input {
+  font-family: inherit;
+}
+textarea {
+  font-family: inherit;
+}
+button {
+  font-family: inherit;
+  width: 100%;
+}
+select {
+  font-family: inherit;
+  font-size: 80%;
+}
+label {
+  margin-block: 5% 2%;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+article {
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+h1 {
+  line-height: 1.1;
+}
+h2 {
+  line-height: 1.1;
+  margin: 0;
+}
+h3 {
+  line-height: 1.1;
+}
+h4{
+  line-height: 1.1;
+}
+h5 {
+  line-height: 1.1;
+}
+h6 {
+  line-height: 1.1;
+}
+.image-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+.image-row img {
+  margin-right: 20px;
+  width: 30%;
+}
+.image-row-2 {
+  width: 100%;
+  box-sizing: border-box;
+}
+.image-row-2 img {
+  margin-right: 20px;
+  width: 45%;
+}
+.figure-row {
+  display: flex;
+}
+
+.figure-row figure {
+  flex: 1;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.figure-row figure:last-child {
+  margin-right: 0;
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
