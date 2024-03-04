@@ -9,27 +9,27 @@ function $$ (selector, context = document) {
 // if (currentLink) {
 // 	currentLink.classList.add("current");
 // }
-let pages = {
-    ".": "Home",
-    "projects": "Projects",
-    "resume": "Resume",
-    "contact": "Contact",
-    "https://github.com/sashajh2": "Github",
-}
-let nav = document.createElement("nav");
-document.body.prepend(nav);
-for (let url in pages) {
-	let title = pages[url];
-	let a = document.createElement("a");
-    a.href = url;
-    a.textContent = title;
-    nav.append(a);
-    if (a.host === location.host && a.pathname === location.pathname) {
-        a.classList.add("current");
-    } else if (a.host !== location.host) {
-        a.target="_blank";
-    }
-}
+// let pages = {
+//     ".": "Home",
+//     "projects": "Projects",
+//     "resume": "Resume",
+//     "contact": "Contact",
+//     "https://github.com/sashajh2": "Github",
+// }
+// let nav = document.createElement("nav");
+// document.body.prepend(nav);
+// for (let url in pages) {
+// 	let title = pages[url];
+// 	let a = document.createElement("a");
+//     a.href = url;
+//     a.textContent = title;
+//     nav.append(a);
+//     if (a.host === location.host && a.pathname === location.pathname) {
+//         a.classList.add("current");
+//     } else if (a.host !== location.host) {
+//         a.target="_blank";
+//     }
+// }
 
 document.body.insertAdjacentHTML("afterbegin", `
 	<label class="color-scheme", style="position: absolute; top: 1rem; right: 1rem; font-size: 80%;">
