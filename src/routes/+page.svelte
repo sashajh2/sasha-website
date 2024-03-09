@@ -19,4 +19,33 @@
     {#each projects.slice(0,3) as p}
         <Project info={p} hLevel={3}/>
     {/each}
+    {#await fetch("https://api.github.com/users/sashajh2") }
+        <p>Loading...</p>
+    {:then response}
+        {#await response.json()}
+            <p>Decoding...</p>
+        {:then data}
+            <h3>My Github Stats</h3>
+            {console.log("JSON: ", JSON.stringify(data))}
+            <dl>
+                <dt>Followers</dt>
+                <dd></dd>
+                <dt>Following</dt>
+                <dd></dd>
+                <dt>Public Repos</dt>
+                <dd></dd>
+                <dt>Public Gists</dt>
+                <dd></dd>
+            </dl>
+            <!-- <p>The data is { JSON.stringify(data) }</p> -->
+        {:catch error}
+            <p class="error">
+                Something went wrong: {error.message}
+            </p>
+        {/await}
+    {:catch error}
+        <p class="error">
+            Something went wrong: {error.message}
+        </p>
+    {/await}
 </div>

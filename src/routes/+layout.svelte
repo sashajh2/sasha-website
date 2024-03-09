@@ -2,7 +2,16 @@
     {#each pages as p}
     <a href={ p.url } class:current={ "." + $page.route.id === p.url } target={ p.url.startsWith("http") ? "_blank" : null }>{ p.title }</a>
     {/each}
-</nav> <slot />
+</nav> 
+<label class="color-scheme", style="position: absolute; top: 1rem; right: 1rem; font-size: 80%;">
+    Theme:
+    <select bind:value={ colorScheme }>
+        <option value="automatic">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>`
+<slot />
 <style>
     a.current {
     border-bottom-width: 2px;
@@ -34,4 +43,27 @@
     {url: "./contact", title: "Contact"},
     {url: "https://github.com/sashajh2", title: "Github"}
 ];
+
+    let localStorage = globalThis.localStorage ?? {};
+    let colorScheme = localStorage.colorScheme ?? "light dark";
+    let root = globalThis?.document?.documentElement;
+    root?.style.setProperty("color-scheme", colorScheme);
+    $: root?.style.setProperty("color-scheme", colorScheme);
+    $: localStorage.colorScheme = colorScheme;
+
+    // console.log(document);
+
+    // const select = document.querySelector('select');
+
+    // select.addEventListener('input', function(event) {
+    //     document.documentElement.style.setProperty("color-scheme", event.target.value);
+    //     localStorage.colorScheme = event.target.value
+    // });
+
+    // if (localStorage.getItem("colorScheme")) {
+    //     const storedColorScheme = localStorage.getItem("colorScheme");
+    //     document.documentElement.style.setProperty("color-scheme", storedColorScheme);
+    //     select.value = storedColorScheme;
+    // }
+
 </script>
