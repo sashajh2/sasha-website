@@ -14,7 +14,8 @@
     class="projects" 
     style=
         "display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));"
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        gap: 20px;"
 >
     {#each projects.slice(0,3) as p}
         <Project info={p} hLevel={3}/>
