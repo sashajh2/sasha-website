@@ -42,7 +42,6 @@
         {:then data}
         <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
             <h3 style="grid-column: 1 / span 4;">My Github Stats</h3>
-            {console.log("JSON: ", JSON.stringify(data))}
             <dl style="display: grid; grid-template-columns: repeat(4, 1fr); border-collapse: collapse;">
                 <dt style="grid-row: 1; grid-column: 1; text-align: left; border: 1px solid black; padding: 5px;">Followers</dt>
                 <dd style="grid-row: 2; grid-column: 1; text-align: left; border: 1px solid black; padding: 5px;">{data.followers}</dd>
