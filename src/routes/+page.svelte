@@ -19,25 +19,40 @@
     {#each projects.slice(0,3) as p}
         <Project info={p} hLevel={3}/>
     {/each}
+    <style>
+        .github-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .github-stats dt {
+            grid-row: 1;
+        }
+
+        .github-stats dd {
+            grid-row: 2;
+        }
+    </style>
     {#await fetch("https://api.github.com/users/sashajh2") }
         <p>Loading...</p>
     {:then response}
         {#await response.json()}
             <p>Decoding...</p>
         {:then data}
-            <h3>My Github Stats</h3>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+            <h3 style="grid-column: 1 / span 4;">My Github Stats</h3>
             {console.log("JSON: ", JSON.stringify(data))}
-            <dl>
-                <dt>Followers</dt>
-                <dd></dd>
-                <dt>Following</dt>
-                <dd></dd>
-                <dt>Public Repos</dt>
-                <dd></dd>
-                <dt>Public Gists</dt>
-                <dd></dd>
+            <dl style="display: grid; grid-template-columns: repeat(4, 1fr); border-collapse: collapse;">
+                <dt style="grid-row: 1; grid-column: 1; text-align: left; border: 1px solid black; padding: 5px;">Followers</dt>
+                <dd style="grid-row: 2; grid-column: 1; text-align: left; border: 1px solid black; padding: 5px;">{data.followers}</dd>
+                <dt style="grid-row: 1; grid-column: 2; text-align: left; border: 1px solid black; padding: 5px;">Following</dt>
+                <dd style="grid-row: 2; grid-column: 2; text-align: left; border: 1px solid black; padding: 5px;">{data.following}</dd>
+                <dt style="grid-row: 1; grid-column: 3; text-align: left; border: 1px solid black; padding: 5px;">Public Repos</dt>
+                <dd style="grid-row: 2; grid-column: 3; text-align: left; border: 1px solid black; padding: 5px;">{data.public_repos}</dd>
+                <dt style="grid-row: 1; grid-column: 4; text-align: left; border: 1px solid black; padding: 5px;">Public Gists</dt>
+                <dd style="grid-row: 2; grid-column: 4; text-align: left; border: 1px solid black; padding: 5px;">{data.public_gists}</dd>
             </dl>
-            <!-- <p>The data is { JSON.stringify(data) }</p> -->
+        </div>
         {:catch error}
             <p class="error">
                 Something went wrong: {error.message}
