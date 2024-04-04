@@ -33,12 +33,9 @@
   <div class="container">
     <svg viewBox="-50 -50 100 100">
       {#each arcs as arc, index}
-        <path
-          d={arc}
-          fill={colors(index)}
-          class:selected={selectedIndex === index}
-          on:click={(e) => (selectedIndex = selectedIndex === index ? -1 : index)}
-        />
+        <path d={arc} fill={ colors(index) }
+            class:selected={selectedIndex === index}
+            on:click={(e) => (selectedIndex = selectedIndex === index ? -1 : index)} />
       {/each}
     </svg>
   
@@ -85,7 +82,7 @@
       --color: oklch(60% 45% 0) !important;
   
       &:is(path) {
-        fill: black;
+        fill: rgb(133, 47, 47);
       }
     }
   

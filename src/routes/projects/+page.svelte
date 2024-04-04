@@ -37,7 +37,6 @@
         if (selectedYear) {
             return project.year === selectedYear;
         }
-
         return true;
     });
 
@@ -61,8 +60,10 @@
         grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
         gap: 20px;"
 >
-    {#each filteredProjects as p}
+{#each filteredProjectsByYear as p}
+    <article>
         <Project info={p} />
-    {/each}
+    </article>
+{/each}
 </div>
     

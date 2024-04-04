@@ -149,3 +149,12 @@ tfoot th {
 tfoot td {
   font-weight: bold;
 }
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+
