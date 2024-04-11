@@ -1,0 +1,67 @@
+body {
+	font: 100%/1.5 system-ui, sans-serif;
+	display: flex;
+	flex-flow: column;
+	max-width: 80em;
+	min-height: 100vh;
+	box-sizing: border-box;
+	margin: auto;
+	padding: 1em;
+}
+#map {
+	flex: 1;
+    background-color: aqua;
+}
+#map svg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+/* Adjust the existing styles for circle elements */
+#map svg circle {
+    fill-opacity: 0.6;
+    stroke: white;
+    stroke-width: 1px;
+    /* Remove the color variables from here */
+}
+
+/* Define a new rule to apply color variables */
+#map svg circle, .legend > div {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+    fill: var(--color);
+}
+
+/* Apply flexbox to the legend container */
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Adjust the gap between legend items */
+}
+
+.legend-label {
+    font-weight: bold;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em; /* Adjust the gap between swatches and labels */
+    position: relative;
+}
+
+.legend-item::before {
+    content: "";
+    width: 20px; /* Adjust the width of swatches */
+    height: 10px; /* Adjust the height of swatches */
+    background: var(--color); /* Use the same color variable as defined for circles */
+    flex-shrink: 0;
+}
+

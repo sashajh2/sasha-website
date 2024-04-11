@@ -18,10 +18,11 @@
         "year": "2024"
     },
     {
-        "title": "Repudiandae fuga similique illum.",
+        "title": "Bluebike Interactive Map",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Exercitationem aliquam eum voluptas modi officiis aliquid natus fuga impedit cumque nobis nam esse odio eligendi magnam aspernatur quisquam corporis eius libero ab consequatur, molestias odit eaque! Corporis, consectetur fuga.",
-        "year": "2021"
+        "description": "Fun display of all the stations and bike lanes in the Boston Area. Includes a heat map based on traffic data.",
+        "year": "2024",
+        "url": "../lab8"
     },
     {
         "title": "Fugit minus quibusdam deserunt.",

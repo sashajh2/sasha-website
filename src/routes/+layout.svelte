@@ -10,7 +10,7 @@
         <option value="light">Light</option>
         <option value="dark">Dark</option>
     </select>
-</label>`
+</label>
 <slot />
 <style>
     a.current {
@@ -42,7 +42,7 @@
 	{url: "./resume", title: "Resume"},
     {url: "./contact", title: "Contact"},
     {url: "./meta", title: "Meta"},
-    {url: "https://github.com/sashajh2", title: "Github"}
+    {url: "https://github.com/sashajh2", title: "Github"},
 ];
 
     let localStorage = globalThis.localStorage ?? {};
