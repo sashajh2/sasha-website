@@ -61,7 +61,7 @@
 </style>
 <dl class="files">
 	{#each files as file (file.name) }
-		<div animate:flip>
+		<div animate:flip={{}}>
 			<dt>
 				<code>{file.name}</code>
 			</dt>
