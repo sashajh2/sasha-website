@@ -4,6 +4,9 @@
     import { onMount } from "svelte";
     import Stats from "../../lib/Stats.svelte";
     import Pie from "../../lib/Pie.svelte";
+    import Scatterplot from "./Scatterplot.svelte";
+    import Scrolly from "svelte-scrolly";
+    import FileLines from "./FileLines.svelte";
     import {
         computePosition,
         autoPlacement,
@@ -16,6 +19,10 @@
     let maxFileLength = 0;
     let longestLineLength = 0;
     let mostFrequentDay = 1;
+    let selectedCommits = [];
+    let commitProgress = 100;
+    let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
 
     onMount(async () => {
         data = await d3.csv("loc.csv", row => ({
@@ -67,11 +74,11 @@
         mostFrequentDay = Array.from(dayCounts.entries()).reduce((maxDay, [day, count]) => count > dayCounts.get(maxDay) ? day : maxDay, 0);
     });
 
-    $: workByPeriod = d3.rollups(data, v => v.length, d => d.datetime.toLocaleString("en", {dayPeriod: "short"}))
+    $: workByPeriod = d3.rollups(filteredLines, v => v.length, d => d.datetime.toLocaleString("en", {dayPeriod: "short"}))
     $: maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
 
     $: dataValues = [
-        data.length,
+        filteredLines.length,
         commits.length,
         numberOfFiles,
         maxFileLength,
@@ -96,9 +103,16 @@
                    .range([usableArea.bottom, usableArea.top]);
 
     $: xScale = d3.scaleTime()
-                   .domain(d3.extent(commits, d => d.datetime))
+                   .domain(d3.extent(filteredCommits, d => d.datetime))
                    .nice()
                    .range([usableArea.left, usableArea.right]);
+
+    $: timeScale = d3.scaleTime() // Create the time scale
+                    .domain(d3.extent(commits, d => d.datetime))
+                    .nice()
+                    .range([0, 100]);
+    // console.log("Time Scale Domain:", timeScale.domain());
+    // console.log("Time Scale Range:", timeScale.range());
 
     let xAxis, yAxis;
     $: {
@@ -117,7 +131,7 @@
 
     let hoveredIndex = -1;
     let hoveredCommit = {};
-    $: hoveredCommit = commits[hoveredIndex] ?? {};
+    $: hoveredCommit = filteredCommits[hoveredIndex] ?? {};
 
     //brushing
     let svg;
@@ -127,7 +141,7 @@
     }
     function brushed (evt) {
         let brushSelection = evt.selection;
-        selectedCommits = !brushSelection ? [] : commits.filter(commit => {
+        selectedCommits = !brushSelection ? [] : filteredCommits.filter(commit => {
             let min = {x: brushSelection[0][0], y: brushSelection[0][1]};
             let max = {x: brushSelection[1][0], y: brushSelection[1][1]};
             let x = xScale(commit.date);
@@ -159,16 +173,27 @@
         else if (evt.type === "mouseleave" || evt.type === "blur") {
             hoveredIndex = -1
         }
+        else if (evt.type === "click" || (evt.type === "keyup" && evt.key === "Enter")) {
+            selectedCommits = [commits[index]]
+        }
     }
 
-    let selectedCommits = [];
     $: hasSelection = selectedCommits.length > 0;
     $: selectedLines = (hasSelection ? selectedCommits : commits).flatMap(d => d.lines);
     $: languageBreakdown = d3.rollups(selectedLines, D => D.length, d => d.type);
     $: languageBreakdownArray = Array.from(languageBreakdown).map(([language, lines]) => ({label: language, value: lines}))
+    $: commitMaxTime = timeScale.invert(commitProgress)
+    $: filteredCommits = commits.filter(commit => commit.datetime <= commitMaxTime);
+    $: filteredLines = data.filter(d => {
+        const commit = commits.find(c => c.id === d.commit);
+        return commit && commit.datetime <= commitMaxTime;
+    });
 
 </script>
 <style>
+    :global(body) {
+        max-width: min(120ch, 80vw);
+    }
 	svg {
 		overflow: visible;
 	}
@@ -212,6 +237,9 @@
         &:hover {
             transform: scale(1.5);
         }
+        @starting-style {
+            r: 0;
+        }
     }
 
     #commit-tooltip {
@@ -222,9 +250,29 @@
         padding: 1em;
     }
 
-    .selected {
-        fill: red !important;
+    .filter {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
     }
+
+    .filter-container {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    .filter input[type="range"] {
+        width: 100%;
+    }
+
+    .filter time {
+        margin-top: 5px; 
+        text-align: right;
+    }
+
+
 </style>
 <Stats 
     tableTitle="Summary"
@@ -232,19 +280,28 @@
     {dataValues}
 />
 <br>
-
+<Pie data={languageBreakdownArray} colors={colors}/>
+<FileLines lines={filteredLines} colors={colors}/>
+<label class="filter">
+    Show commits until: 
+    <div class="filter-container">
+        <input type="range" min="0" max="100" bind:value={commitProgress} />
+        <time>{commitMaxTime.toLocaleString()}</time>
+    </div>
+</label>
+<Pie data={languageBreakdownArray} colors={colors}/>
 <h2>Commits by Time of Day</h2>
 <svg viewBox="0 0 {width} {height}" bind:this={svg}>
     <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
     <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
     <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
 	<g class="dots">
-        {#each commits as commit, index }
+        {#each filteredCommits as commit, index (commit.id) }
             <circle
                 cx={ xScale(commit.datetime) }
                 cy={ yScale(commit.hourFrac) }
                 r="5"
-                fill="steelblue"
+                fill={isCommitSelected(commit) ? "red" : "steelblue"}
                 tabindex="0"
                 aria-describedby="commit-tooltip"
                 aria-haspopup="true"
@@ -252,15 +309,15 @@
                 on:blur={evt => dotInteraction(index, evt)}
                 on:mouseenter={evt => dotInteraction(index, evt)}
 	            on:mouseleave={evt => dotInteraction(index, evt)}
-                class:selected={isCommitSelected(commit)}
+                on:click={evt => dotInteraction(index, evt)}
+                on:keyup={evt => dotInteraction(index, evt)}
             />
         {/each}
     </g>
 </svg>
-<p>{hasSelection ? selectedCommits.length: "No"} commits selected</p>
+<p>{hasSelection ? (selectedCommits.length === 1 ? "1 commit selected" : `${selectedCommits.length} commits selected`) : "No commits selected"}</p>
 
 
-<Pie data={languageBreakdownArray} />
 
 <dl id="commit-tooltip" role="tooltip" class="info tooltip" hidden={hoveredIndex === -1} style="top: {tooltipPosition.y}px; left: {tooltipPosition.x}px" bind:this={commitTooltip}>
 	<dt class="info">Commit</dt>
