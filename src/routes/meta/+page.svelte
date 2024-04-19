@@ -380,6 +380,23 @@
     </Scrolly>
 </div>
 
+<h2>File Lengths and Language Breakdown</h2>
+<Scrolly bind:progress={ commitProgress2 } --scrolly-layout="viz-first" --scrolly-viz-width="1.5fr" throttle=150>
+    <svelte:fragment slot="viz">
+		<FileLines lines={filteredLines2} colors={colors}/>
+	</svelte:fragment>
+    {#each commits as commit, index }
+        <p class="narrative-stat">
+            <a href="{commit.url}" target="_blank">Commit #{ index  }</a><br>
+            {commit.datetime.toLocaleString("en", {dateStyle: "full", timeStyle: "short"})}<br>
+            {commit.totalLines} lines across { d3.rollups(commit.lines, D => D.length, d => d.file).length } files<br>
+        </p>
+        <p class="narrative-yap">
+            {commitNarrative[index] ?? "And then I once again wrote some code, for which I have not yet hard-coded a narrative."}
+        </p>
+    {/each}
+</Scrolly>
+
 
 <dl id="commit-tooltip" role="tooltip" class="info tooltip" hidden={hoveredIndex === -1} style="top: {tooltipPosition.y}px; left: {tooltipPosition.x}px" bind:this={commitTooltip}>
 	<dt class="info">Commit</dt>
