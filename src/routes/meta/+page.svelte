@@ -114,6 +114,7 @@
     // console.log("Time Scale Domain:", timeScale.domain());
     // console.log("Time Scale Range:", timeScale.range());
 
+    
     let xAxis, yAxis;
     $: {
         d3.select(xAxis).call(d3.axisBottom(xScale));
@@ -182,12 +183,38 @@
     $: selectedLines = (hasSelection ? selectedCommits : commits).flatMap(d => d.lines);
     $: languageBreakdown = d3.rollups(selectedLines, D => D.length, d => d.type);
     $: languageBreakdownArray = Array.from(languageBreakdown).map(([language, lines]) => ({label: language, value: lines}))
+
     $: commitMaxTime = timeScale.invert(commitProgress)
     $: filteredCommits = commits.filter(commit => commit.datetime <= commitMaxTime);
     $: filteredLines = data.filter(d => {
         const commit = commits.find(c => c.id === d.commit);
         return commit && commit.datetime <= commitMaxTime;
     });
+
+    let commitProgress2 = 100;
+    $: commitMaxTime2 = timeScale.invert(commitProgress2);
+    $: filteredLines2 = data.filter(d => {
+        const commit = commits.find(c => c.id === d.commit);
+        return commit && commit.datetime <= commitMaxTime2;
+    });
+
+    let commitNarrative = [
+        "Setting up Svelte by creating a basic template Svelte project.",
+        "Carrying over all pages / basic formatting from my previous site.",
+        "Getting things set up with Github Pages.",
+        "Bug fix: home URL",
+        "Creating and displaying a Projects component",
+        "Creating a layout for UI shared across pages",
+        "Theme picker fix, GitHub data on home page",
+        "Bug fix: stop URL routing to Namecheap",
+        "Create Pie component and use to visualize project year breakdown",
+        "Bug fix: project search bar correctly filters when projects are already filtered using pie chart",
+        "Create meta page with scatterplot of commits and pie chart",
+        "Add BlueBike Map project and URLs to all projects",
+        "Include scrollytelling in meta page"
+    ]
+
+
 
 </script>
 <style>
@@ -272,6 +299,20 @@
         text-align: right;
     }
 
+    p.narrative-yap {
+        font-size: 150%;
+        margin-top: 0;
+    }
+
+    p.narrative-stat {
+        opacity: 50%;
+        margin-bottom: 0;
+    }
+
+    #scrolly-1 {
+        margin-bottom: 20em;
+    }
+
 
 </style>
 <Stats 
@@ -280,6 +321,8 @@
     {dataValues}
 />
 <br>
+
+{#if false}
 <Pie data={languageBreakdownArray} colors={colors}/>
 <FileLines lines={filteredLines} colors={colors}/>
 <label class="filter">
@@ -289,34 +332,53 @@
         <time>{commitMaxTime.toLocaleString()}</time>
     </div>
 </label>
-<Pie data={languageBreakdownArray} colors={colors}/>
-<h2>Commits by Time of Day</h2>
-<svg viewBox="0 0 {width} {height}" bind:this={svg}>
-    <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
-    <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
-    <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
-	<g class="dots">
-        {#each filteredCommits as commit, index (commit.id) }
-            <circle
-                cx={ xScale(commit.datetime) }
-                cy={ yScale(commit.hourFrac) }
-                r="5"
-                fill={isCommitSelected(commit) ? "red" : "steelblue"}
-                tabindex="0"
-                aria-describedby="commit-tooltip"
-                aria-haspopup="true"
-                on:focus={evt => dotInteraction(index, evt)}
-                on:blur={evt => dotInteraction(index, evt)}
-                on:mouseenter={evt => dotInteraction(index, evt)}
-	            on:mouseleave={evt => dotInteraction(index, evt)}
-                on:click={evt => dotInteraction(index, evt)}
-                on:keyup={evt => dotInteraction(index, evt)}
-            />
-        {/each}
-    </g>
-</svg>
-<p>{hasSelection ? (selectedCommits.length === 1 ? "1 commit selected" : `${selectedCommits.length} commits selected`) : "No commits selected"}</p>
+{/if}
 
+<div id="scrolly-1">
+    <h2>Commits and Language Breakdown</h2>
+    <Scrolly bind:progress={ commitProgress }  --scrolly-viz-width="1.5fr" throttle=150>
+        {#each commits as commit, index }
+            <p class="narrative-stat">
+                <a href="{commit.url}" target="_blank">Commit #{ index  }</a><br>
+                {commit.datetime.toLocaleString("en", {dateStyle: "full", timeStyle: "short"})}<br>
+                {commit.totalLines} lines across { d3.rollups(commit.lines, D => D.length, d => d.file).length } files<br>
+            </p>
+            <p class="narrative-yap">
+                {commitNarrative[index] ?? "And then I once again wrote some code, for which I have not yet hard-coded a narrative."}
+            </p>
+        {/each}
+        <svelte:fragment slot="viz">
+            <h2>Commits by Time of Day</h2>
+            <svg viewBox="0 0 {width} {height}" bind:this={svg}>
+                <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
+                <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
+                <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
+                <g class="dots">
+                    {#each filteredCommits as commit, index (commit.id) }
+                        <circle
+                            cx={ xScale(commit.datetime) }
+                            cy={ yScale(commit.hourFrac) }
+                            r="5"
+                            fill={isCommitSelected(commit) ? "red" : "steelblue"}
+                            tabindex="0"
+                            aria-describedby="commit-tooltip"
+                            aria-haspopup="true"
+                            on:focus={evt => dotInteraction(index, evt)}
+                            on:blur={evt => dotInteraction(index, evt)}
+                            on:mouseenter={evt => dotInteraction(index, evt)}
+                            on:mouseleave={evt => dotInteraction(index, evt)}
+                            on:click={evt => dotInteraction(index, evt)}
+                            on:keyup={evt => dotInteraction(index, evt)}
+                        />
+                    {/each}
+                </g>
+            </svg>
+            <p>{hasSelection ? (selectedCommits.length === 1 ? "1 commit selected" : `${selectedCommits.length} commits selected`) : "No commits selected"}</p>
+            
+            <Pie data={languageBreakdownArray} colors={colors}/>
+        </svelte:fragment>
+    </Scrolly>
+</div>
 
 
 <dl id="commit-tooltip" role="tooltip" class="info tooltip" hidden={hoveredIndex === -1} style="top: {tooltipPosition.y}px; left: {tooltipPosition.x}px" bind:this={commitTooltip}>

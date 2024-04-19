@@ -172,8 +172,22 @@
     }
   
     path {
-      transition: 300ms;
-      transition-property: transform, opacity, fill;
+	    transition: 300ms;
+        cursor: pointer;
+        outline: none;
+        --angle: calc(var(--end-angle) - var(--start-angle));
+	      --mid-angle: calc(var(--start-angle) + var(--angle) / 2);
+        transform: rotate(var(--mid-angle))
+	           translateY(0)
+	           rotate(calc(-1 * var(--mid-angle)));
+        &.selected {
+            transform: rotate(var(--mid-angle))
+                    translateY(-6px)
+                    scale(1.1)
+                    rotate(calc(-1 * var(--mid-angle)));
+	    }
+        transition-property: transform, opacity, fill;
     }
+
   </style>
   
