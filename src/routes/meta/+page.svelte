@@ -78,7 +78,7 @@
     $: maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
 
     $: dataValues = [
-        filteredLines.length,
+        data.length,
         commits.length,
         numberOfFiles,
         maxFileLength,
