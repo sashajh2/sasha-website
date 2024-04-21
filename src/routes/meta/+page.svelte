@@ -180,7 +180,7 @@
     }
 
     $: hasSelection = selectedCommits.length > 0;
-    $: selectedLines = (hasSelection ? selectedCommits : commits).flatMap(d => d.lines);
+    $: selectedLines = (hasSelection ? selectedCommits : filteredCommits).flatMap(d => d.lines);
     $: languageBreakdown = d3.rollups(selectedLines, D => D.length, d => d.type);
     $: languageBreakdownArray = Array.from(languageBreakdown).map(([language, lines]) => ({label: language, value: lines}))
 
