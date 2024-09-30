@@ -1,17 +1,18 @@
 [
     {
+        "title": "Corporate Housing Ownership and Boston Evictions",
+        "class": 
+        "image": "images/corp/Corp Surplus Swing.png",
+        "description": "This HTML document delves into the effects of corporate landlordship on eviction trends and demographic shifts in Boston's housing market. Through detailed analysis and visualizations, it explores the rise of corporate ownership since 2004, its influence on neighborhood dynamics, and its correlation with urbanization and racial demographics, shedding light on housing disparities and community dynamics in urban areas.",
+        "year": "2024",
+        "url": "https://cammyt5.github.io/eviction-depiction/"
+    },
+    {
         "title": "Predicting Demographics and Handedness from Handwriting Using CNNs and Transformers",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Provident cumque adipisci quasi voluptatem nostrum vitae iure. Asperiores error tenetur vitae totam veritatis sequi voluptas rem nihil modi minima architecto et ipsam perspiciatis explicabo cumque, odio ratione facilis provident?",
         "year": "2024",
         "file": ""
-    },
-    {
-        "title": "Corporate Housing Ownership and Boston Evictions",
-        "image": "images/corp/Corp Surplus Swing.png",
-        "description": "This HTML document delves into the effects of corporate landlordship on eviction trends and demographic shifts in Boston's housing market. Through detailed analysis and visualizations, it explores the rise of corporate ownership since 2004, its influence on neighborhood dynamics, and its correlation with urbanization and racial demographics, shedding light on housing disparities and community dynamics in urban areas.",
-        "year": "2024",
-        "url": "https://cammyt5.github.io/eviction-depiction/"
     },
     {
         "title": "Corporate Landlords and Boston Evictions (exposition)",
