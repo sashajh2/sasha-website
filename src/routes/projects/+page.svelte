@@ -1,7 +1,7 @@
 <script>
     import * as d3 from 'd3';
     import projects from '$lib/projects.json';
-    import Project from "$lib/Project.svelte";
+    import ProjectSection from "$lib/ProjectSection.svelte";
     import Pie from '$lib/Pie.svelte';
     export let hLevel = 2;
 
@@ -13,6 +13,16 @@
         let values = Object.values(project).join("\n").toLowerCase();
         return values.includes(query.toLowerCase());
     });
+    
+    let groupedProjectsByYear;
+    $: groupedProjectsByYear = d3.group(filteredProjects, d => d.year);
+
+    let groupedProjectsObject;
+    $: groupedProjectsObject = Array.from(groupedProjectsByYear).reduce((acc, [year, projects]) => {
+        acc[year] = projects;
+        return acc;
+    }, {});
+    //Sort this by year (largest year first)
 
     $: {
     pieData = {};
@@ -39,31 +49,25 @@
         }
         return true;
     });
+    $: {
+        console.log(filteredProjectsByYear); // Logs the value of filteredProjectsByYear
+    }
+    
+    let projectsByYear;
 
 </script>
 <svelte:head>
 	<title>Projects</title>
 </svelte:head>
-<h1>Projects ({projects.length} in Total)</h1>
-
-<Pie data={pieData} bind:selectedIndex={selectedYearIndex} />
 <input 
     type="search" 
     bind:value={query}
     aria-label="Search projects"
     placeholder="🔍 Search projects…" />
 
-<div 
-    class="projects" 
-    style=
-        "display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-        gap: 20px;"
->
-{#each filteredProjectsByYear as p}
-    <article>
-        <Project info={p} />
-    </article>
-{/each}
+<div>
+    {#each Object.entries(groupedProjectsObject) as [year, projects]}
+        <ProjectSection year={year} projects={projects}/>
+    {/each}
 </div>
     

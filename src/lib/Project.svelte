@@ -2,6 +2,10 @@
     export let info = {};
     export let hLevel = 2;
 
+    let isExpanded = false;
+    function toggleExpand() {
+        isExpanded = !isExpanded
+    }
     function handleClick() {
         if (info.file) {
             window.open(info.file, '_blank'); // Open the file in a new tab
@@ -13,8 +17,8 @@
 <style>
     @import url("$lib/global.css");
 
-    .card {
-        border: 1px solid #ccc; /* Card border */
+    article {
+        border: 1px solid #ccc; /* Thin border outline */
         border-radius: 8px;     /* Rounded corners */
         padding: 16px;          /* Padding inside the card */
         margin: 16px;           /* Space around the card */
@@ -23,26 +27,77 @@
         cursor: pointer; /* Show pointer cursor on hover */
     }
 
-    .card:hover {
-        transform: scale(1.05); /* Scale up on hover */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
     }
 
-    article {
-        grid-row: span 1;
-        display: grid;
-        grid-template-rows: auto auto auto;
+    .class-caret-container {
+        display: flex;
+        align-items: center;
     }
+
     h2 {
         color: var(--primary)
+    }
+    h3 {
+        color: var(--secondary)
     }
     p{
         color: var(--text)
     }
+    .description {
+        margin-top: 10px;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .caret {
+        display: inline-block;
+        margin-left: 10px;
+        transition: transform 0.2s ease-in-out;
+        color: var(--secondary)
+    }
+
+    .caret.expanded {
+        transform: rotate(90deg);
+    }
 
 </style>
-<article class="card" on:click={handleClick}>
-    <h2>{ info.title }</h2>
-    <img src={info.image} alt="">
-    <p>{info.description}</p>
+<article>
+    <div class="title-container" on:click={toggleExpand}>
+        <h2>{info.title}</h2>
+        <!-- HERE: put the class and caret side by side -->
+        <div class="class-caret-container">
+            <h3>{info.class}</h3>
+            <span class="caret {isExpanded ? 'expanded' : ''}">▶</span>
+        </div>
+    </div>
+
+    {#if isExpanded}
+        <div class="description">
+            <p>{info.description}</p>
+        </div>
+
+        <div class="button-container">
+            <button on:click={handleClick}>View Project</button>
+        </div>
+    {/if}
 </article>
