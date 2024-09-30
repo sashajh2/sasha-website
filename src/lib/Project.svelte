@@ -13,6 +13,9 @@
             window.open(info.url, '_blank'); // Open the URL in a new tab
         }
     }
+    $: {
+        console.log(info);
+    }
 </script>
 <style>
     @import url("$lib/global.css");
@@ -32,6 +35,7 @@
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        gap: 10px;
     }
 
     .class-caret-container {
@@ -66,7 +70,7 @@
     }
 
     button:hover {
-        background-color: var(--primary-dark);
+        background-color: var(--secondary);
     }
 
     .caret {
@@ -80,24 +84,45 @@
         transform: rotate(90deg);
     }
 
+    .skills-container {
+        margin-top: 10px;
+        display: flex;
+        /* overflow-x: auto; Allow overflow if needed */
+        gap: 10px; /* Space between skills */
+    }
+
+    .skill {
+        background-color: var(--secondary); /* Background for each skill */
+        border-radius: 4px; /* Rounded corners for skills */
+        padding: 4px 8px; /* Padding inside each skill box */
+    }
+
 </style>
 <article>
     <div class="title-container" on:click={toggleExpand}>
         <h2>{info.title}</h2>
         <!-- HERE: put the class and caret side by side -->
         <div class="class-caret-container">
-            <h3>{info.class}</h3>
+            <h3>{info.date}</h3>
             <span class="caret {isExpanded ? 'expanded' : ''}">▶</span>
         </div>
     </div>
 
     {#if isExpanded}
         <div class="description">
+            <p>{info.class}</p>
             <p>{info.description}</p>
         </div>
 
         <div class="button-container">
             <button on:click={handleClick}>View Project</button>
+        </div>
+        <div class="skills-container">
+            {#each info.skills as skill}
+                <div class="skill">
+                    <p>{skill}<p>
+                </div>
+            {/each}
         </div>
     {/if}
 </article>

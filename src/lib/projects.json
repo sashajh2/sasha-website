@@ -5,6 +5,8 @@
         "image": "images/corp/Corp Surplus Swing.png",
         "description": "This HTML document delves into the effects of corporate landlordship on eviction trends and demographic shifts in Boston's housing market. Through detailed analysis and visualizations, it explores the rise of corporate ownership since 2004, its influence on neighborhood dynamics, and its correlation with urbanization and racial demographics, shedding light on housing disparities and community dynamics in urban areas.",
         "year": "2024",
+        "date": "May 14",
+        "skills": ["Svelte", "JS"],
         "url": "https://cammyt5.github.io/eviction-depiction/"
     },
     {
@@ -13,6 +15,8 @@
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Provident cumque adipisci quasi voluptatem nostrum vitae iure. Asperiores error tenetur vitae totam veritatis sequi voluptas rem nihil modi minima architecto et ipsam perspiciatis explicabo cumque, odio ratione facilis provident?",
         "year": "2024",
+        "date": "May 10",
+        "skills": ["Machine Learning", "Computer Vision"],
         "file": "files/6.8301/Final Report.pdf"
     },
     {
@@ -21,6 +25,8 @@
         "image": "images/corp/Corp Surplus Swing.png",
         "description": "This HTML document delves into the effects of corporate landlordship on eviction trends and demographic shifts in Boston's housing market. Through detailed analysis and visualizations, it explores the rise of corporate ownership since 2004, its influence on neighborhood dynamics, and its correlation with urbanization and racial demographics, shedding light on housing disparities and community dynamics in urban areas.",
         "year": "2024",
+        "date": "Feb 27",
+        "skills": ["Machine Learning", "Computer Vision"],
         "file": "projects/a2.html"
     },
     {
@@ -29,6 +35,8 @@
         "image": "images/a3/Men_1900.png",
         "description": "This project delves into the changing U.S. population distribution from 1900 to 2000, exploring gender disparities in life expectancy and potential causes such as working conditions, public health, and medical treatment. It culminates in Sankey Diagrams visualizing causes of death for men and women in 1900 and 1997, providing insights into mortality trends and gender differences in lifespan.",
         "year": "2024",
+        "date": "March 13",
+        "skills": ["Machine Learning", "Computer Vision"],
         "file": "projects/a3.html"
     },
     {
@@ -37,6 +45,8 @@
         "image": "images/a4/Police Brutality.jpg",
         "description": "This project explores civilian complaints against New York City police officers, aiming to discern whether policing has deteriorated since the 1980s. Through data analysis and visualizations, it asserts that police misconduct and brutality in New York City have worsened over time, despite some potential improvements in institutional responses.",
         "year": "2024",
+        "date": "April 1",
+        "skills": ["Machine Learning", "Computer Vision"],
         "file": "projects/a4.html"
     }
 ]
