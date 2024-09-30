@@ -13,6 +13,7 @@
 </label>
 <slot />
 <style>
+    @import url("$lib/global.css");
     a.current {
     border-bottom-width: 2px;
     border-bottom-style: solid;
