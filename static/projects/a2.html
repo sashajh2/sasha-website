@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="../style.css" rel="stylesheet"></link>
+    <script type="module" src="../global.js"></script>
+</head>
+<body>
+    <h1>6.C35 Assignmennt 2</h1>
+    <div>
+        <h2>Subtheme: Corporate Landlords & Evictions</h2>
+        <h2>Articles</h2>
+        <ul>
+            <li style="display: list-item;"><a href="https://www.nytimes.com/interactive/2018/04/07/upshot/millions-of-eviction-records-a-sweeping-new-look-at-housing-in-america.html?smid=pl-share" target="_blank">Link to the New York Times article</a></li>
+        </ul>
+        <h2>Part 1: Introduction</h2>
+            <h3>Dataset</h3>
+                <p>The provided data is broken into 3 files</p>
+                <ol>
+                    <li style="display: list-item;">Boston Neigborhoods and Zip Codes</li>
+                        <ul>
+                            <li style="display: list-item;"><b>Description: </b>This dataset contains information about Boston neighborhoods and their corresponding zip codes. It serves as a geographical reference for the analysis.</li>
+                            <li style="display: list-item;"><b>Attributes: </b></li>
+                            <blockquote>
+                                <ul>
+                                    <li style="display: list-item;"><b>Zip Code: The postal code for each neighborhood </b></li>
+                                    <li style="display: list-item;"><b>Neighborhood: The name of the Boston neighborhood.</b></li>
+                                </ul>
+                            </blockquote>   
+                        </ul>
+                    <li style="display: list-item;">Corporate Ownership and Occupancy</li>
+                        <ul>
+                            <li style="display: list-item;"><b>Description: </b>This dataset provides insights into corporate ownership and owner occupancy rates within various Boston neighborhoods from 2004 to 2024. It is derived from property assessment records of the City of Boston.</li>
+                            <li style="display: list-item;"><b>Attributes: </b></li>
+                            <blockquote>
+                                <ul>
+                                    <li style="display: list-item;"><b>Neighborhood: The name of the Boston neighborhood.</b></li>
+                                    <li style="display: list-item;"><b>Year: The year in which the data was recorded, ranging from 2004 to 2024.</b></li>
+                                    <li style="display: list-item;"><b>Corporate Ownership Rate: The proportion of corporate-owned properties within each neighborhood and year.</b></li>
+                                    <li style="display: list-item;"><b>Owner Occupancy Rate: The proportion of owner-occupied properties within each neighborhood and year.</b></li>
+                                </ul>
+                            </blockquote>   
+                        </ul>
+                    <li style="display: list-item;">Census + Corp Ownership and Occupancy</li>
+                    <ul>
+                        <li style="display: list-item;"><b>Description: </b>This dataset is a combination of the previous dataset with 2020 Census data for each neighborhood. It offers a broader perspective by incorporating demographic information along with corporate ownership and occupancy rates.</li>
+                        <li style="display: list-item;"><b>Attributes: (Based on provided Census Data Fields)</b></li>
+                        <blockquote>
+                            <ul>
+                                <li style="display: list-item;"><b>Population demographics such as college students, racial demographics, age demographics, housing unit details, and institutional population.</b></li>
+                                <li style="display: list-item;"><b>Neighborhood: The name of the Boston neighborhood.</b></li>
+                            </ul>
+                        </blockquote>   
+                    </ul>
+                </ol>
+            <h3>Initial Analysis Questions</h3>
+                <ol>
+                    <li style="display: list-item;">What impact does corporate landlordship have on the city of Boston?</li>
+                        <p><b>Motivation: </b>As a college student who has rented from a corporate landlord in Boston, I've likely experienced firsthand the dynamics of corporate-owned properties. Understanding the broader impact of corporate landlordship on Boston can shed light on housing stability, tenant-landlord relationships, and community well-being. Analyzing this impact could provide me with valuable insights for policymakers, tenants, and property owners alike.</p>
+                    <li style="display: list-item;">How does this impact compare to our understanding of eviction trends in Boston?</li>
+                        <p><b>Motivation: </b> My interest in comparing corporate landlordship's impact with eviction trends in Boston stems from my awareness of an article by Homes For All Mass, suggesting that corporate landlords may contribute to higher eviction rates. Investigating this comparison can help validate or challenge existing assumptions, leading to a deeper understanding of the factors driving eviction trends in Boston and their relationship to corporate landlordship.</p>
+                    <li style="display: list-item;">How does this impact compare to other cities (like Richmond)?</li>
+                        <p><b>Motivation: The article about eviction rates in Richmond, Virginia, presents an opportunity for me to explore how housing dynamics, including corporate landlordship and eviction trends, vary across different cities. Drawing parallels and contrasts between Boston and Richmond can offer me valuable insights into the broader socio-economic and legal factors influencing housing stability and tenant rights in urban environments. This comparative analysis can contribute to a more nuanced understanding of housing challenges and potential policy interventions at both local and national levels.</b></p>
+                </ol>
+        <h2>Part 2: Analysis</h2>
+            <p>To explore the role of Corporate Landlordship in Boston, an examination of data on corporate landlord rates from both the second and third datasets was undertaken. It became evident that corporate landlordship has experienced a significant surge since 2004 across various neighborhoods, while Owner Occupancy rates have either stagnated or possibly declined.</p>
+                <div class="image-row">
+                    <img src="../images/corp/Corporate Ownership vs Owner Occupancy.png"></img>
+                    <img src="../images/corp/BH - Corporate Ownership vs Owner Occupancy.png"></img>
+                    <img src="../images/corp/SB- Corporate Ownership vs Owner Occupancy.png"></img>
+                </div>
+                <p>This surge in corporate landlordship indicates a recent phenomenon. To assess its effects, I devised the "Corporate Surplus" metric, calculated as Corporate Ownership Rate minus Owner Occupancy Rate, to gauge the state of corporate rentals in each neighborhood.</p>
+                <blockquote>
+                    <p><em>Corporate Surplus = Corporate Own Rate - Owner Occ Rate</em></p>
+                </blockquote>
+                <p>Corporate Surplus serves as a barometer of the housing market, contrasting Corporate Owned Rentals with Owner Occupied properties, which represent opposing ends of the spectrum. This metric underscores the dynamic interplay between these two housing sectors.</p>
+                <p>In essence, three distinct types of housing can be delineated:</p>
+                <ol>
+                    <li style="display: list-item;"><b>Corporate Owned Rentals:</b> These units are owned by corporations, as denoted by the Corp Own Rate in the data.</li>
+                    <li style="display: list-item;"><b>Private Owned Rentals:</b> These units, presumably owned by individuals, constitute the remaining segment of housing unaccounted for in the data.</li>
+                    <li style="display: list-item;"><b>Owner Occupied:</b> These units are occupied by the property owner, as indicated by the Own Occ Rate in the data.</li>
+                </ol>
+                <p>To assess the impact of corporate landlordship on neighborhoods, an analysis of the change in Corporate Surplus since 2004 was deemed crucial.</p>
+                <img src="../images/corp/Corp Surplus Swing.png"></img>
+                <p>Above is a bar chart depicting Boston neighborhoods ranked by their change in Corporate Surplus since 2004.</p>
+                <p>This measure signifies the shift in Corporate Landlordship's market share relative to individual property ownership. For instance, the West End's 39% indicates that since 2004, Corporate Landlordship has gained a 39% market share compared to owning one's property.</p>
+                <p>Upon scrutinizing the most affected neighborhoods, several discernible patterns emerge.</p>
+                <p>The top 5 neighborhoods predominantly comprise urban areas. This alignment with urban locales mirrors the transition towards corporate landlordship, typically associated with apartment complexes over single-family homes.</p>
+                <p>Additionally, these urban neighborhoods tend to be inhabited by young professionals and college students, who often reside in large apartment complexes proximal to their workplaces or universities, which are more frequently corporate-owned.</p>
+                <p>As a college student currently residing in Fenway, the analysis initially centered on demographics related to age.</p>
+                <p>Key metrics that were examined include:</p>
+                <ol>
+                    <li style="display: list-item;"><b>College Students: </b>Given Boston's substantial college student population, with over 10 schools in the city, it is imperative to consider their impact on the housing market. The majority of college students reside in university-owned housing, often corporate-owned. Thus, areas with a high college population are likely to exhibit a correspondingly high corporate landlordship rate. <b>Boston Average: 5.12%</b></li>
+                    <li style="display: list-item;"><b>Child Population: </b>Theoretically, neighborhoods with a significant child population necessitate numerous single-family homes or units, ideally not corporate-owned. Hence, if a neighborhood with a high Corporate Surplus swing also has a high child population, it warrants exploration of the repercussions on residential zones. <b>Boston Average: 15.5%</b></li>
+                    <li style="display: list-item;"><b>Adult Population: </b> <b>Boston Average: 84.5%</b></li>
+                </ol>
+                <p>The neighborhoods can be divided along these lines.</p>
+                <div class="image-row-2">
+                    <img src="../images/age/Fenway Neighborhood Age Demographics.png"></img>
+                    <img src="../images/age/Longwood Neighborhood Age Demographics.png"></img>
+                </div>
+                <p>Fenway and Longwood boast high populations of college students, largely due to their proximity to major universities like Boston University and Harvard Medical School. The demand for student housing drives the demographic makeup of these areas, with students seeking proximity to academic facilities and amenities. This concentration of students fosters a vibrant community and cultural atmosphere, defining the character of Fenway and Longwood. The presence of numerous colleges enhances the neighborhoods' appeal, creating dynamic living environments where academia and urban life intersect, shaping the social and economic dynamics of these communities.</p>
+                <div class="image-row-2">
+                    <img src="../images/age/NE Neighborhood Age Demographics.png"></img>
+                    <img src="../images/age/WE Neighborhood Age Demographics.png"></img>
+                </div>
+                <p>The North End and West End, historic neighborhoods at Boston's center, feature few children. Their age and centrality make them prime spots for corporate ownership. Their historical charm and central location attract corporate investors, drawn to their cultural significance and urban accessibility. The prevalence of corporate-owned properties highlights their enduring appeal and status as coveted residential hubs.</p>
+                <div class="image-row-2">
+                    <img src="../images/age/EB Neighborhood Age Demographics.png"></img>
+                    <p>East Boston presents a distinctive case amidst Boston's shifting housing landscape towards corporate ownership. Despite its residential character and high child population, there's a discernible trend towards corporate housing. This transition poses unique challenges, as the area's family-oriented demographic clashes with the corporate housing model, potentially altering the neighborhood's dynamics. The influx of corporate-owned properties may reshape East Boston's community fabric, raising questions about affordability, neighborhood identity, and the impact on families in a traditionally residential setting.</p>
+                </div>
+                <!-- RACE SECTION -->
+                <p>I then decided to inspect the relationship between corporate landlordship and race. I divided the population into the 5 racial groups provided by the Census data: </p>
+                <ol>
+                    <li style="display: list-item;">AIAN (American Indian and Alaskan Native) <b>Boston Average: 0.145%</b></li>
+                    <li style="display: list-item;">AAPI (Asian American and Pacific Islander) <b>Boston Average: 10.81%</b></li>
+                    <li style="display: list-item;">Black <b>Boston Average: 19.76%</b></li>
+                    <li style="display: list-item;">Hispanic <b>Boston Average: 19.02%</b></li>
+                    <li style="display: list-item;">White (Non-hispanic) <b>Boston Average: 43.95%</b></li>
+                </ol>
+                <div class="image-row">
+                    <img src="../images/race/EB Neighborhood Race Demographics.png"></img>
+                    <img src="../images/race/Fenway Neighborhood Race Demographics.png"></img>
+                    <img src="../images/race/Longwood Neighborhood Race Demographics.png"></img>
+                    <img src="../images/race/NE Neighborhood Race Demographics.png"></img>
+                    <img src="../images/race/WE Neighborhood Race Demographics.png"></img>
+                </div>
+                <p>Amidst Boston's housing evolution, <b>East Boston</b> stands out with its primarily residential character and notably high child population, indicating a family-oriented community. Despite this, there's a discernible trend towards corporate housing models in the area, potentially reshaping its traditional fabric and raising questions about affordability and community dynamics.</p>
+                <p><b>Fenway, the West End, and Longwood</b> exhibit similar racial compositions, featuring AAPI populations approximately double the Boston Average. They also have slightly higher-than-average White populations but lower-than-average Black and Hispanic populations. The limited data from 2020 prevents tracking demographic changes over time. Plausible reasons for these racial demographics include the presence of colleges in Fenway and the West End, along with the medical center in Longwood, attracting diverse communities including Asian workers.</p>
+                <p>Lastly, the <b>North End</b> exhibits a significantly high White population at 86.13%, nearly double the average rate in Boston. This demographic composition is attributed to its historical identity as an Italian cultural enclave, where the majority of Italians are classified as White.</p>
+
+                <p>The analysis reveals a lack of consistent patterns in the racial composition of neighborhoods transitioning to corporate landlordship. Without comprehensive Census data including income levels, historical racial demographics, and longitudinal trends, a thorough examination of the impacts of corporate landlordship remains unattainable. Access to such data is imperative to assess how corporate ownership influences neighborhood dynamics, socioeconomic disparities, and the equitable distribution of resources across diverse communities over time.</p>
+
+                <p>Further, when comparing the corporate landlordship rates to the map of Boston eviction filings, we get a different conclusion
+                <!-- MAP SECTION -->
+                <div class="image-row-2">
+                    <img src="../images/map/Screenshot 2024-02-24 at 5.53.17 PM.png"></img>
+                    <img src="../images/map/Corporate Ownership by Boston Neighborhood.png"></img>
+                </div>
+                <p>The first map, sourced from an article by HomesForAllMass, illustrates the racial demographics of Boston neighborhoods juxtaposed with their eviction filings.</p>
+                <p>The second map, crafted by me, displays Corporate Landlordship rates across Boston.</p>
+                <p>If corporate landlords were solely responsible for evictions, we would anticipate an alignment between the yellow dots on the first map and the shaded areas on the second. However, the data reveals an inverse relationship, indicating that neighborhoods with fewer corporate landlords often experience higher rates of eviction filings.</p>
+                <p>This observation doesn't imply that corporate landlords are inherently more lenient or preferable. Rather, it underscores the correlation between Corporate Landlordship and urbanization. Residents in urban areas, typically served by corporate-owned multi-unit buildings, tend to face fewer eviction threats due to factors such as short-term leasing practices (common among young professionals) or robust rent protections (common in university-dominated areas)</p>
+                <div>
+                <p>Further, when comparing Boston's relationship between evictions and neighborhood to a previously analyzed example in Richmond, Virgina, we see the following: </p>
+                <div class="image-row-2">
+                    <img src="../images/map/Screenshot 2024-02-24 at 5.53.17 PM.png"></img>
+                    <img src="../images/map/Screenshot 2024-02-24 at 5.54.42 PM.png"></img>
+                </div>
+                <p>In the first map of Boston and the corresponding areas in the Richmond map, shading indicates regions with predominantly non-white populations, while blue/yellow dots denote evictions, reflecting their prevalence in those areas.</p>
+                <p>Upon examination, it becomes evident that the primary correlation lies between race and evictions, a sobering reality rooted in historical injustices and enduring policies that perpetuate the marginalization of non-white communities. It's crucial to recognize that corporate landlords, while not immune to criticism, may inadvertently contribute positively to minority groups. The operational scale of corporate entities necessitates a more standardized approach to tenant relations, mitigating personal biases in eviction processes. Additionally, corporate-owned rentals, often situated in urban centers, can present opportunities for marginalized communities, as indicated by my analysis.</p>
+
+                </div>
+                <h2>Conclusions</h2>
+                <p>Through the analysis of corporate landlordship and eviction trends in Boston, several key insights emerge:</p>
+                <ol>
+                    <li style="display: list-item;">The surge in corporate landlordship since 2004 across various neighborhoods underscores a notable shift in the city's housing landscape.</li>
+                    <li style="display: list-item;">The "Corporate Surplus" metric serves as a valuable indicator of the dynamic interplay between corporate-owned rentals and owner-occupied properties within neighborhoods.</li>
+                    <li style="display: list-item;">Urban areas with a high concentration of young professionals and college students exhibit a greater prevalence of corporate-owned properties, reshaping the demographic makeup of these neighborhoods.</li>
+                    <li style="display: list-item;">While no consistent patterns emerge regarding the racial composition of neighborhoods transitioning to corporate landlordship, further comprehensive data including income levels and historical racial demographics is imperative to assess the impacts of corporate ownership on socioeconomic disparities.</li>
+                    <li style="display: list-item;">Contrary to expectations, neighborhoods with fewer corporate landlords often experience higher rates of eviction filings, indicating a nuanced relationship between corporate landlordship, urbanization, and eviction threats.</li>
+                    <li style="display: list-item;">Comparative analysis with Richmond, Virginia, underscores the primary correlation between race and evictions, highlighting historical injustices and enduring policies that perpetuate the marginalization of non-white communities.</li>
+                </ol>
+    </div>  
+</body>

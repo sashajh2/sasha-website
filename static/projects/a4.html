@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="../style.css" rel="stylesheet"></link>
+    <script type="module" src="../global.js"></script>
+</head>
+<body>
+    <h1>6.C35 Assigment 4</h1>
+    <div>
+        <h2>Task Selection and Motivations</h2>
+            <p>
+            Out of the datasets provided, I was most motivated to explore <b>Civilian Complaints Against New York City Police Officers</b>.
+            New York public services have always fascinated me. They are regarded as well run and storied despite their massive size, with 
+            the police, fire, and park departments coming to mind. I read <i>Freakanomics by Steven Leavitt</i> in high school, and the first 
+            behavioral economic situation they discuss is the fall of crime rates in the US, beginning in the 1980s. There are many theories as to what 
+            contributed to this, including improvements made to public services, economic prosperity, American peace, no major wars, etcBy 
+            performing controlled studies tracking the lives and outcomes of many people, they were able to closely estimate how much different 
+            factors contributed to variance in crime. In the book, Leavitt concludes that the role of increased policing was only marginal, with 
+            other societal changes, namely abortion, causing the greatest impact. I was interested to see how policing tactics changed over time
+            and how policing impacted society. My general intuition suggests that as crime has gone down and society has become generally less 
+            violent, that policing has gotten more lenient with fewer officer related incidents. However, we have also beared witness to many 
+            crimes committed by police officers, namely assaults, escalation, and excessive use of force resulting in gruesome injuries and deaths.
+            Some suggest that this is due to a lack of training, while others believe that an abuse of power is at play. However the saddest fact 
+            is that a disproportionate number of victims have belonged to minority and disadvantaged groups, includig minorities and the disabled.
+            This societal prevelance coupled with conflicting observations (lower crime and increased attention police violence) motivated me to 
+            investigate if the police have gotten better or worse since the 1980s.
+            </p>
+        <h2>Initial Data Exploration</h2>
+            <h3>Dataset</h3>
+                <h4>Metadata and Fields</h4>
+                <p>The ReadMe file containing information on how the dataset was gathered is linked below: </p>
+                <ul style="padding-left: 20px;">
+                    <li style="display: list-item"><a href="../files/a4/ReadMe _ Civilian Complaints Against New York City Police Officers.pdf" target="_blank"><b>ReadMe: Civilian Complaints Against New York City Police Officers.pdf</b></a></li>
+                </ul>
+                <p>In the description of the dataset, a few important facts are highlighted: </p>
+                <ul>
+                    <li style="display: list-item;">The dataset includes a record of more than 12000 civilian complaints filed against New York City police officers.</li>
+                    <li style="display: list-item;">Only officers who have received one or more complaint against them <b>AND</b> are still on the force are included in the dataset.</li>
+                    <li style="display: list-item;">
+                        After complaints are made, the cases are evaluated by a review board. Three types of outcomes are available for officers based on their case.
+                        <ol>
+                            <li style="display: list-item;"><b>Unsubstantiated: </b>The officer in question was determined to not be at fault or engaging in the alleged behavior and the complaint is dismissed.</li>
+                            <li style="display: list-item;"><b>Exonerated: </b>The officer was involved in an incident claimed by the complaint. However, they were ruled to have acted within the guidelines of the NYPD rules and were not punished.</li>
+                            <li style="display: list-item;"><b>Substaniated: </b>The officer in question was involved in the situation and was determined to have violated the rules. There are 4 types of officer violations that may occur, called FADO; <b>F</b>orce, <b>A</b>buse of Authority, <b>D</b>iscourtesy, and <b>O</b>ffensive Language. If the complaint is substantiated, officers always receive discipline or training. </li>
+                        </ol>
+                    </li>
+                </ul>
+                <p>The fields provided in the dataset are as follows: </p>
+                <ul style="list-style-type: none; padding: 0; columns: 2;">
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Officer Name</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Age of Complainant</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Shield Number</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Race of Complainant</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Rank</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Gender of Complainant</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Precinct</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Alleged Misconduct</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Age of Officer</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Month of Complaint</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Race of Officer</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Year of Complaint</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Gender of Officer</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Month of Case Closure</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Reason for Officer Contact</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Year of Case Closure</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Legal Outcome of Complaint</li>
+                    <li style="display: inline-block; width: 45%;"><b>- </b>Punishment Received by Officer</li>
+                    <!-- Add more list items as needed -->
+                </ul>
+                <h4>Shape of Data</h4>
+                    <p>Initially, I felt as though the most important and pressing data to evaluate was the number of complaints and substantiated claims made over time. In theory, the number of complaints should be correlated with the public disapproval of the police and publicly perceived police wrongdoings. The number of substantiated claims should represent the propensity of officers to act brutally and irresponsible.</p>
+                    <img src="../images/a4/Complaints Line Graph.png"/>
+                    <p>Above we can clearly begin to see a few trends. Firstly, the number of complaints AND substantiated claims have exploded. The total number of complaints rose sharply between 2000 and 2008, with the number of substantiated claims lagging behind, but also increasing.</p>
+                <h4>Further Exploration</h4>
+                    <p>From the above visualizations, we can begin to draw a few conclusions regarding the state of policing in New York.</p>
+                    <p>Firstly, one could conclude that police in New York City are getting more violent and unjust. The number of complaints and substantiated claims has markedly increased, meaning that both the common people and the review board are in agreement that police officers in the city are committing more wrongdoing.</p>
+                    <p>On the flip side, one could make the argument that NYPD has been improving. From the visualizations, it appears that there has been a consistent pathway to report officer misconduct since 1985. However the governnment began fielding many more complaints at the beginning of the 21st century. Although there was some lag, they acted on these complaints, and after a sustained increase in complaints, the CCRB began to deliver more judgements against police officers and hold them on a shorter leash.</p>
+                    <p>As such, I decided to develop a proposition investigating the phenomenon of misconduct and brutality among NYPD Officers</p>
+        <h2>Proposition</h2>
+            <p style="text-align: center;"><b>Police Misconduct and Brutality in New York City has gotten worse since the 1980s</b></p>
+        <h2>Visualizations and Analysis</h2>
+            <h3>Side 1: Police Misconduct in New York City has Gotten Worse</h3>
+            <img src="../images/a4/Police Brutality.jpg"/>
+            <h3 style="text-align: center;">NEW YORK HAS HAD ENOUGH!</h3>
+            <h3 style="text-align: center;">IMAGINE WHO THEY FIRED!?</h3>
+                <h4>Analysis</h4>
+                <ul>
+                    <li style="display: list-item;"><b>Deception: -1.0</b> This visualization checks in as moderately deceptive. Although the data presented is factual, it is misleading. Firstly, the dataset itself is flawed and presents a skewed version of reality. This data comes from officers who have had complaints leveed against them who are still on the force. Thus the numbers will naturally grow greater with recency, as there are more police officers who have been tenured for 5 years than 35 years. This allows a creator to exploit a timescale feature to suggest that occurrences of police misconduct are occuring at increasing rates. However, none of the information I am presennting is tecnnically unfactual. The bars represent all the incidents that NYPD officers were confirmed to have been involved in. The black line represents the cases that were substantiated, and thus the officers involved were punished. </li>
+                    <li style="display: list-item;"><b>Design Choices: </b>I chose to make a few distinct design choices to communicate my point. Firstly, I wanted to categorize all of the types of incident involving officers. I first colored the incidents concerning physical violence, and colored this bar red to draw attention to it. I also put it just above the black line to place it at the focal point of the graphic. Furthermore, having the red bar above the black line implicitly suggests that no police officer was charged for physical violence. The rest I assigned colors that would blend in relatively well against the red, further serving its emphasis. I decided to overlay the substantiated claims using a black line to effectively contrast the two sets of data. I wanted to draw attention to the fact that many officers are not being given punishments for their involvement in incidents. The last design choice was my use of annotations. These serve to rile up the reader and promote emotion while technically not saying anything false. The bars are incidents that an officer was confirmed to have been involved with, meaning they technically did do what was listed, albeit often within their powers. The annotation for the black line is more straightforwardly true.  </li>
+                </ul>
+                <p>TL/DR: Deceptive wording, but true information</p>
+            <h3>Side 2: Humane Policing in New York City has helped the city</h3>
+                <h4>Analysis</h4>
+                <img src="../images/a4/Pro COP 3.jpg"/>
+                <ul>
+                    <li style="display: list-item;"><b>Deception: -2.0 </b> This one is far more deceptive. The green bars represent the ratio of cases where <b>police took action </b> in response to a substantiated claim <b>vs. how often police were exonerated.</b> This ratio represents how strict police are being with their police relative to how many complaints they are receiving. In previous visualizations, this manifests as the line of substantiated claims catching up to the line of total claims after the year 2000. In order to see this increase, I spliced the data from 2000 onwards, when this increased judication for officers began to become prevalent. I also rephrased it to be "Officers Retrained or Disciplined", as those are the two actions taken by the committee during substantiated claims. The blue line represents the total number of complaints processed in that year. However, I rephrased "complaints" to "feedback", as <b>"technically"</b> a complaint is a form of feedback. To reinforce this idea that complaints are a good thing, I also labelled it "Community Members Served" in the legend. The annotations serve as misdirection (Sept 11 attacks) and to emphasize the allegedly good nature of the increases in the number of complaints and substantiated claims. In short, I both splice the data so that the shape fits my needs and misrepresent the actual working of this data, making this visualization highly deceptive.</li>
+                    <li style="display: list-item;"><b>Design Choices: </b> I employed the use of various design choices to communicate positive energy and support for the NYPD with this visualization. Firstly, I colored the bars Blue and Green (soft colors) and had them increase in value over the range of years to implicitly suggest that these are positive trends. Next, I chose to employ various annotations to misdirect attention and selectively provide context. First, I mark the date of the Sept 11 Attacks in New York City. During this tragic event, the NYPD and NYFD were highly critical in saving lives. Hopefully this annotation forces viewers to think back to their gratitude for the NYPD. Secondly, I hope it subtly provides the viewer with a possible explanation for why the rate of complaints spiked. The annotation implies that 9/11 serves as a catalyst for upcoming positive change in New York policing. Next, I mark the years of record amounts of officer trainings issued and complaints processed. Through my careful positive phrasing, I suggest that NYPD is doing everything it can to help the citizens of New York.</li>
+                </ul>
+        <h2>Conclusion</h2>
+            <p>I really enjoyed this assignment. It forced me to think about a variety of things. Firstly, verbiage is very important. You can drastically distort the rhetoric of a statement while keeping it technically true. Secondly, it is important to know how to communicate data. If you are arguing that something bad (like police brutality) is increasing, your data should have a positive slope to reflect this. This way the reader better understands the connection you are trying to make between the data and your narrative. Similarly, if you're arguing that something good is going away, show a decrease in your data. I also learned that color is highly important. Drawing attention to areas of the visualization can be easily done through bright and bold coloring. What wasn't easy was finding data metrics to fit the design requirements necessary to create these. </p>
+            <p>Further, it was hard to create a narrative with the given dataset. As I mentioned earlier, the dataset was fundamentally flawed in that it included just current cops who had committed previous acts of misconduct. This excludes the worst offenders (who were presumably fired and thus not included in the dataset) while also creating an underlying skew in the data to recent years that could be easily misinterpreted. However, I eventually realized that I could use the fact that these acts were committed by current officers to enforce my original narrative that the police is violent. I could also abuse the skew to the data to imply that the rates of occurence of police misconduct were increasing. </p>
+    </div>
+</body>

@@ -1,21 +1,31 @@
 [
     {
+        "title": "Predicting Demographics and Handedness from Handwriting Using CNNs and Transformers",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Provident cumque adipisci quasi voluptatem nostrum vitae iure. Asperiores error tenetur vitae totam veritatis sequi voluptas rem nihil modi minima architecto et ipsam perspiciatis explicabo cumque, odio ratione facilis provident?",
+        "year": "2024",
+        "file": 
+    },
+    {
         "title": "6.C35 Assignment 2",
         "image": "images/corp/Corp Surplus Swing.png",
         "description": "This HTML document delves into the effects of corporate landlordship on eviction trends and demographic shifts in Boston's housing market. Through detailed analysis and visualizations, it explores the rise of corporate ownership since 2004, its influence on neighborhood dynamics, and its correlation with urbanization and racial demographics, shedding light on housing disparities and community dynamics in urban areas.",
-        "year": "2024"
+        "year": "2024",
+        "file": "static/6.C35-Spring-2024/projects/a2.html"
     },
     {
         "title": "6.C35 Assignment 3",
         "image": "images/a3/Men_1900.png",
         "description": "This project delves into the changing U.S. population distribution from 1900 to 2000, exploring gender disparities in life expectancy and potential causes such as working conditions, public health, and medical treatment. It culminates in Sankey Diagrams visualizing causes of death for men and women in 1900 and 1997, providing insights into mortality trends and gender differences in lifespan.",
-        "year": "2024"
+        "year": "2024",
+        "file": "static/6.C35-Spring-2024/projects/a3.html"
     },
     {
         "title": "6.C35 Assignment 4",
         "image": "images/a4/Police Brutality.jpg",
         "description": "This project explores civilian complaints against New York City police officers, aiming to discern whether policing has deteriorated since the 1980s. Through data analysis and visualizations, it asserts that police misconduct and brutality in New York City have worsened over time, despite some potential improvements in institutional responses.",
-        "year": "2024"
+        "year": "2024",
+        "file": "static/6.C35-Spring-2024/projects/a4.html"
     },
     {
         "title": "Bluebike Interactive Map",
@@ -23,53 +33,5 @@
         "description": "Fun display of all the stations and bike lanes in the Boston Area. Includes a heat map based on traffic data.",
         "year": "2024",
         "url": "../lab8"
-    },
-    {
-        "title": "Fugit minus quibusdam deserunt.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Provident cumque adipisci quasi voluptatem nostrum vitae iure. Asperiores error tenetur vitae totam veritatis sequi voluptas rem nihil modi minima architecto et ipsam perspiciatis explicabo cumque, odio ratione facilis provident?",
-        "year": "2021"
-    },
-    {
-        "title": "Dolores tempore dignissimos perspiciatis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Assumenda quas odit dignissimos et inventore doloremque in non harum magnam. Aliquid explicabo voluptatibus soluta suscipit vero ducimus officiis labore quis ex voluptates? Neque magnam dignissimos quis optio nihil dicta.",
-        "year": "2022"
-    },
-    {
-        "title": "Sint quibusdam animi alias.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Expedita optio iste aspernatur quibusdam, cupiditate nulla excepturi obcaecati. Quo facere voluptatem, recusandae natus quisquam veniam consequuntur mollitia. Modi libero accusantium itaque sint? Repellat sapiente facilis laborum, id ex maiores.",
-        "year": "2022"
-    },
-    {
-        "title": "Repellat optio eos magni!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Possimus a repellat soluta obcaecati voluptates iure eveniet saepe quae delectus unde officiis vitae doloribus consequuntur deleniti, officia illum iste cumque impedit quibusdam fugiat, magnam similique deserunt adipisci! Ex, enim!",
-        "year": "2019"
-    },
-    {
-        "title": "Corrupti adipisci rem fugiat?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Perferendis, temporibus provident cum, quidem reiciendis voluptas accusantium similique nemo optio possimus ipsa molestiae, dolorum atque quis omnis deserunt! Ullam impedit architecto iusto vero esse animi soluta perspiciatis obcaecati aliquid.",
-        "year": "2021"
-    },
-    {
-        "title": "Adipisci debitis tempore ullam?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Vel perferendis dolore deleniti veritatis neque, corporis temporibus, quia architecto facilis eius ipsum tenetur, atque officiis quod quaerat exercitationem ratione. Iure amet odio repellat eaque explicabo facilis dolore impedit praesentium!",
-        "year": "2020"
-    },
-    {
-        "title": "Ipsam adipisci distinctio qui.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quidem error modi temporibus ea aperiam voluptatibus architecto natus ad nobis porro, tempora voluptatum. Qui et voluptatem nisi ratione exercitationem asperiores temporibus magnam distinctio eveniet delectus quisquam aliquid, a dolorem.",
-        "year": "2019"
-    },
-    {
-        "title": "Magnam fuga nemo temporibus!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Totam, minima. Nemo et voluptatibus nesciunt iste quisquam soluta odio possimus! Delectus animi incidunt earum fugit fuga voluptate pariatur officiis, repudiandae corporis magni. Voluptate odio perspiciatis provident dolorum voluptatibus dolore.",
-        "year": "2017"
     }
 ]
