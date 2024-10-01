@@ -65,9 +65,10 @@
     aria-label="Search projects"
     placeholder="🔍 Search projects…" />
 
-<div>
+<div style="margin-top: 10px;">
     {#each Object.entries(groupedProjectsObject) as [year, projects]}
         <ProjectSection year={year} projects={projects}/>
     {/each}
 </div>
+
     

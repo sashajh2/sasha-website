@@ -15,14 +15,15 @@
 <style>
     @import url("$lib/global.css");
     a.current {
+    color: var(--primary);
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: oklch(80% 3% 200);
+    border-bottom-color: var(--primary);
     padding-bottom: 0.25em;
     }
 
     a:hover {
-    color: var(--color-accent);
+    color: var(--primary);
     }
 
     nav {
@@ -41,6 +42,7 @@
 	{url: "./", title: "Home"},
 	{url: "./projects", title: "Projects"},
 	{url: "./resume", title: "Resume"},
+    {url: "./personal", title: "Personal"},
     {url: "./contact", title: "Contact"},
     {url: "./meta", title: "Meta"},
     {url: "https://github.com/sashajh2", title: "Github"},

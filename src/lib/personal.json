@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Climbing",
+        "image": "images/personal/climbing/IMG_4961.jpeg",
+        "description": "I have been climbing since 2015.",
+        "button-text": "More Climbing ",
+        "button-route": ""
+    },
+    {
+        "title": "Serbian",
+        "image": "images/personal/serbia/bijeljina.webp",
+        "description": "I am half serbian. ",
+        "button-text": "More about Serbian",
+        "button-route": ""
+    },
+    {
+        "title": "Rowing",
+        "image": "images/personal/rowing/647A2970.jpg",
+        "description": "I rowed for 6 years",
+        "button-text": "More Rowing",
+        "button-route": ""
+    }
+]
