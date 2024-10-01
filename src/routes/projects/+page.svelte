@@ -49,9 +49,6 @@
         }
         return true;
     });
-    $: {
-        console.log(filteredProjectsByYear); // Logs the value of filteredProjectsByYear
-    }
     
     let projectsByYear;
 

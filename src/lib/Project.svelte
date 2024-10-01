@@ -13,9 +13,6 @@
             window.open(info.url, '_blank'); // Open the URL in a new tab
         }
     }
-    $: {
-        console.log(info);
-    }
 </script>
 <style>
     @import url("$lib/global.css");
