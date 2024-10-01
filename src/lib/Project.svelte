@@ -8,9 +8,9 @@
     }
     function handleClick() {
         if (info.file) {
-            window.open(info.file, '_blank'); // Open the file in a new tab
+            window.open(info.file, '_blank');
         } else if (info.url) {
-            window.open(info.url, '_blank'); // Open the URL in a new tab
+            window.open(info.url, '_blank');
         }
     }
 </script>
@@ -18,13 +18,13 @@
     @import url("$lib/global.css");
 
     article {
-        border: 1px solid #ccc; /* Thin border outline */
-        border-radius: 8px;     /* Rounded corners */
-        padding: 16px;          /* Padding inside the card */
-        margin: 16px;           /* Space around the card */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-        transition: transform 0.2s; /* Smooth transition for hover */
-        cursor: pointer; /* Show pointer cursor on hover */
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+        padding: 16px;
+        margin: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        cursor: pointer;
     }
 
     .title-container {
@@ -44,9 +44,10 @@
         color: var(--primary)
     }
     h3 {
-        color: var(--secondary)
+        color: var(--secondary);
+        white-space: nowrap;
     }
-    p{
+    p {
         color: var(--text)
     }
     .description {
@@ -57,9 +58,10 @@
         margin-top: 10px;
     }
 
+
     button {
         background-color: var(--primary);
-        color: white;
+        color: var(--background-color);
         border: none;
         padding: 8px 12px;
         border-radius: 4px;
@@ -84,21 +86,22 @@
     .skills-container {
         margin-top: 10px;
         display: flex;
-        /* overflow-x: auto; Allow overflow if needed */
-        gap: 10px; /* Space between skills */
+        gap: 10px;
     }
 
     .skill {
-        background-color: var(--secondary); /* Background for each skill */
-        border-radius: 4px; /* Rounded corners for skills */
-        padding: 4px 8px; /* Padding inside each skill box */
+        background-color: var(--secondary);
+        border-radius: 4px; 
+        padding: 4px 8px;
+    }
+    .class-name {
+        color: var(--secondary)
     }
 
 </style>
 <article>
     <div class="title-container" on:click={toggleExpand}>
         <h2>{info.title}</h2>
-        <!-- HERE: put the class and caret side by side -->
         <div class="class-caret-container">
             <h3>{info.date}</h3>
             <span class="caret {isExpanded ? 'expanded' : ''}">▶</span>
@@ -107,7 +110,7 @@
 
     {#if isExpanded}
         <div class="description">
-            <p>{info.class}</p>
+            <p class="class-name">{info.class}</p>
             <p>{info.description}</p>
         </div>
 

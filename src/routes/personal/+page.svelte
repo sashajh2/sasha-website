@@ -9,22 +9,23 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin: 0 -1em;
     }
-    /**/
     .card {
         border: 1px solid #ccc;
         border-radius: 4px;
         padding: 0em;
         margin: 1em;
         text-align: left;
-        width: 30%;
+        width: calc(33.33% - 2em);
+        box-sizing: border-box;
     }
     img {
         max-width: 100%;
     }
     button {
         background-color: var(--primary);
-        color: var(--secondary);
+        color: var(--background-color);
         border: none;
         padding: 0.5em 1em;
         border-radius: 2px;
@@ -32,6 +33,7 @@
     }
     button:hover {
         opacity: 0.8;
+        background-color: var(--secondary)
     }
     h1 {
         color: var(--primary)
@@ -46,9 +48,10 @@
         padding: 10px;
     }
     
-    @media (max-width: 600px) {
+    @media (max-width: 750px) {
         .card {
-            width: 100%;              
+            width: 100%;   
+            margin: 0.5em 0;           
         }
     }
 </style>
