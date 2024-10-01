@@ -1,7 +1,7 @@
 <style>
     @import url("$lib/global.css");
     h1 {
-       color: var(--text);
+       color: var(--primary);
     }
     h2 {
        color: var(--primary);
@@ -31,6 +31,7 @@
 <svelte:head>
 	<title>Resume</title>
 </svelte:head>
+<p>Want to have a pdf download button</p>
 <h1>Sasha Jovanovic-Hacon</h1>
 <div class="section">
         <h2>Education</h2>

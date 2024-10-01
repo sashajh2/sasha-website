@@ -53,16 +53,23 @@
     let projectsByYear;
 
 </script>
+<style>
+    h1 {
+        color: var(--primary)
+    }
+</style>
 <svelte:head>
 	<title>Projects</title>
 </svelte:head>
+<h1>Projects</h1>
+<p> Want to add buttons to filter by skill</p>
 <input 
     type="search" 
     bind:value={query}
     aria-label="Search projects"
     placeholder="🔍 Search projects…" />
 
-<div style="margin-top: 10px;">
+<div style="margin-top: 20px;">
     {#each Object.entries(groupedProjectsObject) as [year, projects]}
         <ProjectSection year={year} projects={projects}/>
     {/each}

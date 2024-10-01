@@ -76,3 +76,7 @@ body {
     flex-shrink: 0;
 }
 
+h1 {
+    color: var(--primary)
+}
+
