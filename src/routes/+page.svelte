@@ -3,11 +3,22 @@
     import Project from "$lib/Project.svelte";
     import { slide } from 'svelte/transition';
 </script>
+<style>
+    a {
+        color: var(--primary)
+    }
+</style>
 <svelte:head>
 	<title>About me</title>
 </svelte:head>
 <h1>Sasha Jovanovic-Hacon</h1>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio officia in explicabo velit unde ipsa vel quaerat voluptatum eligendi, consequuntur quibusdam perferendis recusandae harum, expedita, a quia aliquam maiores dolores.</p>
+<p>
+    Hello! I'm Sasha, a senior at MIT studying 
+    <a href="https://www.eecs.mit.edu/academics/undergraduate-programs/curriculum/6-4-artificial-intelligence-and-decision-making/" target="_blank">Artificial Intelligence and Decision Making</a>. 
+    With a solid foundation in mathematics, software engineering, and machine learning, I have spent years honing my skills in full-stack development and data analysis. 
+    I have a strong passion for statistical analysis, as it helps unravel complex relationships and enables informed decision-making. 
+    Outside of my studies, I enjoy outdoor activities like climbing and running, and I'm currently learning Serbian.
+</p>
 <img src="images/IMG_4782.JPEG" alt="An image of the author in Bijeljina, Bosnia" />
 <h2>Latest Projects</h2>
 <div 

@@ -1,7 +1,15 @@
 <script></script>
 <style>
     @import url("$lib/global.css");
-
+    form {
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
+        margin: 10px;
+    }
     button {
         background-color: var(--primary);
         color: var(--background-color);
