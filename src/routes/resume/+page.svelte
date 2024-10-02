@@ -26,12 +26,40 @@
         list-style-type: circle; /* Use disc for bullet points */
         padding-left: 20px; /* Add padding for indentation */
     }
+    .download-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 20px 0;
+        transition: background-color 0.3s;
+    }
+
+    .download-button:hover {
+        background-color: var(--secondary);
+    }
+
+    .download-icon {
+        width: 20px; /* Adjust icon size */
+        height: auto;
+        margin-right: 8px; /* Spacing between icon and text */
+        fill: white; /* Change fill color to match text */
+    }
 </style>
 
 <svelte:head>
 	<title>Resume</title>
 </svelte:head>
-<p>Want to have a pdf download button</p>
+<a href="files/resume/Resume-2024 Updated-2.docx" download class="download-button">
+    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M12 3v12m0 0l-3-3m3 3 3-3"/>
+    </svg>
+    Download Resume
+</a>
+
 <h1>Sasha Jovanovic-Hacon</h1>
 <div class="section">
         <h2>Education</h2>
