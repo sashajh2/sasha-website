@@ -2,22 +2,22 @@
     {
         "title": "Climbing",
         "image": "images/personal/climbing/IMG_4961.jpeg",
-        "description": "I have been climbing since 2015.",
-        "button-text": "More Climbing ",
+        "description": "I’ve been climbing since 2015, primarily focusing on bouldering. I've had the opportunity to climb in about 10 states, and my goal is to eventually climb in all 50 states!",
+        "button-text": "Climb on",
         "button-route": "climbing/"
     },
     {
         "title": "Serbian",
         "image": "images/personal/serbia/bijeljina.webp",
-        "description": "I am half serbian. ",
-        "button-text": "More about Serbian",
+        "description": "My mom immigrated from Serbia in 1990, and my grandparents still live there. I'm connected to the culture and have been seriously learning the language for the past two years, having spoken a bit as a child with my grandparents.",
+        "button-text": "Saznaj više",
         "button-route": "serbia/"
     },
     {
         "title": "Rowing",
         "image": "images/personal/rowing/647A2970.jpg",
-        "description": "I rowed for 6 years",
-        "button-text": "More Rowing",
+        "description": "I rowed for 6 years and was fortunate enough to race all over the country, including two years at the collegiate level. Rowing has been an incredible journey of teamwork and competition.",
+        "button-text": "Attention, Row!",
         "button-route": "rowing/"
     }
 ]

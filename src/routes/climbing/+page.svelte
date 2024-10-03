@@ -44,13 +44,14 @@
     .carousel img {
         width: auto;
         height: 100%;
-        object-fit: cover;
+        object-fit: ;
     }
 </style>
 
 <div>
     <h1>Rock Climbing</h1>
     {#if isBrowser}
+        <p> I have been climbing since 2015 </p>
         <div class="carousel-wrapper">
             <Carousel
                 bind:this={carousel}
@@ -59,6 +60,8 @@
                 autoplayDuration={3000}
                 autoplayProgressVisible
                 class="carousel"
+                let:showPrevPage
+                let:showNextPage
             >
             {#each images as src, imageIndex (src)}
                 <div class="img-container">

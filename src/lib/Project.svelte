@@ -94,6 +94,9 @@
         border-radius: 4px; 
         padding: 4px 8px;
     }
+    .skill:hover {
+        background-color: var(--primary)
+    }
     .class-name {
         color: var(--secondary)
     }
@@ -119,9 +122,7 @@
         </div>
         <div class="skills-container">
             {#each info.skills as skill}
-                <div class="skill">
-                    <p>{skill}<p>
-                </div>
+                <button class="skill">{skill}</button>
             {/each}
         </div>
     {/if}
