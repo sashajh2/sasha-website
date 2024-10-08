@@ -57,7 +57,7 @@
 </style>
 
 <div>
-    <h1>PERSONAL</h1>
+    <h1>Personal</h1>
     <div class="card-container">
         {#each personalData as item}
             <div class="card">

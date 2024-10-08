@@ -36,7 +36,7 @@
         "description": "This project delves into the changing U.S. population distribution from 1900 to 2000, exploring gender disparities in life expectancy and potential causes such as working conditions, public health, and medical treatment. It culminates in Sankey Diagrams visualizing causes of death for men and women in 1900 and 1997, providing insights into mortality trends and gender differences in lifespan.",
         "year": "2024",
         "date": "March 13",
-        "skills": ["Machine Learning", "Computer Vision"],
+        "skills": ["Data Analysis", "Tableau"],
         "file": "projects/a3.html"
     },
     {
@@ -46,7 +46,7 @@
         "description": "This project explores civilian complaints against New York City police officers, aiming to discern whether policing has deteriorated since the 1980s. Through data analysis and visualizations, it asserts that police misconduct and brutality in New York City have worsened over time, despite some potential improvements in institutional responses.",
         "year": "2024",
         "date": "April 1",
-        "skills": ["Machine Learning", "Computer Vision"],
+        "skills": ["Data Analysis", "Tableau"],
         "file": "projects/a4.html"
     }
 ]

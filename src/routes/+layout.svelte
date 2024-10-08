@@ -3,14 +3,14 @@
     <a href={ p.url } class:current={ "." + $page.route.id === p.url } target={ p.url.startsWith("http") ? "_blank" : null }>{ p.title }</a>
     {/each}
 </nav> 
-<label class="color-scheme", style="position: absolute; top: 1rem; right: 1rem; font-size: 80%;">
+<!-- <label class="color-scheme", style="position: absolute; top: 1rem; right: 1rem; font-size: 80%;">
     Theme:
     <select bind:value={ colorScheme }>
         <option value="automatic">Automatic</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
     </select>
-</label>
+</label> -->
 <slot />
 <style>
     @import url("$lib/global.css");

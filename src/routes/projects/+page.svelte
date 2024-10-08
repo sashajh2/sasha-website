@@ -62,7 +62,6 @@
 	<title>Projects</title>
 </svelte:head>
 <h1>Projects</h1>
-<p> Want to add buttons to filter by skill</p>
 <input 
     type="search" 
     bind:value={query}
