@@ -46,12 +46,62 @@
         height: 100%;
         object-fit: ;
     }
+
+    .button-wrapper {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        background-color: var(--button-bg-color, #f0f0f0); /* Default background color */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: var(--button-hover-bg-color, #555); /* Button hover color */
+    }
+
+    .button img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+
+    }
 </style>
 
 <div>
     <h1>Rock Climbing</h1>
+    <div>
+        <p>
+            I started climbing in 2015, and it quickly became a passion. One of my favorite aspects of climbing is the mental focus it requires. Each movement demands attention to a mix of technical and physical details, and I love the process of refining and optimizing until everything flows perfectly.
+        </p>
+        <p>
+            I also thrive on the sense of adventure that comes with climbing outdoors. There’s nothing quite like discovering a new route in nature and, after countless attempts, finally conquering it. Training is another part of climbing I really enjoy, especially when I have great partners who push me to my limits and help me grow by sharing different perspectives.
+        </p>
+        <p>
+            My goal is to keep climbing for the rest of my life, share the experience with my future kids, and travel the world to explore different types of rock, climbing styles, and the natural beauty that comes with it.
+        </p>
+    </div>
+    <div class="button-wrapper">
+        <a class="button" href="https://www.instagram.com/momentum_millcreek_boulders/" target="_blank" style="--button-bg-color: #012161; --button-hover-bg-color: #c5beb0;">
+            <img src="images/contact/Instagram-jpg copy.jpg" alt="Instagram" />
+            Bouldering Instagram
+        </a>
+        <a class="button" href="https://www.8a.nu/user/sasha-jovanovic-hacon-60963/bouldering" target="_blank" style="--button-bg-color: #ec1e2f; --button-hover-bg-color: #c5beb0;">
+            <img src="images/personal/climbing/8anu.png" alt="8a.nu" />
+            My Climbs
+        </a>
+    </div>
     {#if isBrowser}
-        <p> I have been climbing since 2015 </p>
         <div class="carousel-wrapper">
             <Carousel
                 bind:this={carousel}
@@ -73,9 +123,4 @@
             </Carousel>
         </div>
     {/if}
-    <div>
-        <p>
-            Here you can write a bit of text about climbing, your experiences, techniques, or anything else you'd like to share!
-        </p>
-    </div>
 </div>

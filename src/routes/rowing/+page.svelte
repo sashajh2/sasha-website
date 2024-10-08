@@ -51,6 +51,17 @@
 
 <div>
     <h1>Rowing</h1>
+    <div>
+        <p>
+            My introduction to rowing came through my older brother, who was on his high school rowing team. They recruited me to join as a coxswain since I was young and small. I agreed, but it didn’t take long before I wanted to row myself and prove my ability to the older teammates.
+        </p>
+        <p>
+            As I got more involved, I became serious about my training. Soon, I was rowing upwards of 600 kilometers each month, training twice a day. I found a deep love for the long hours spent on the rowing machine, especially alongside friends, and the thrill of seeing our hard work translate to success on the water.
+        </p>
+        <p>
+            One of my proudest achievements was setting a world record and going on to row for two years at MIT. Rowing gave me some of my most cherished memories and taught me invaluable lessons about perseverance, the importance of intention and striving for perfection, and the true challenge of developing mental fortitude and discipline.
+       </p>
+    </div>
     {#if isBrowser}
         <div class="carousel-wrapper">
             <Carousel
@@ -71,9 +82,4 @@
             </Carousel>
         </div>
     {/if}
-    <div>
-        <p>
-            Here you can write a bit of text about climbing, your experiences, techniques, or anything else you'd like to share!
-        </p>
-    </div>
 </div>
