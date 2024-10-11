@@ -11,7 +11,9 @@
         <option value="dark">Dark</option>
     </select>
 </label> -->
-<slot />
+<div class="page-wrapper">
+    <slot />
+</div>
 <style>
     @import url("$lib/global.css");
     a.current {
@@ -35,6 +37,9 @@
     border-bottom-style: solid;
     border-bottom-color: var(--border-color);
     }
+    .page-wrapper {
+        margin-bottom: 50px;
+    }
 </style>
 <script>
     import {page} from '$app/stores';
@@ -44,7 +49,7 @@
 	{url: "./resume", title: "Resume"},
     {url: "./personal", title: "Personal"},
     {url: "./contact", title: "Contact"},
-    {url: "./meta", title: "Meta"},
+    // {url: "./meta", title: "Meta"},
     {url: "https://github.com/sashajh2", title: "Github"},
 ];
 

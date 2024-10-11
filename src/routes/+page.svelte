@@ -7,6 +7,10 @@
     a {
         color: var(--primary)
     }
+    .image-container {
+        width: 50%;
+        margin: 0 auto;
+    }
 </style>
 <svelte:head>
 	<title>About me</title>
@@ -19,13 +23,14 @@
     I have a strong passion for statistical analysis, as it helps unravel complex relationships and enables informed decision-making. 
     Outside of my studies, I enjoy outdoor activities like climbing and running, and I'm currently learning Serbian.
 </p>
-<img src="images/IMG_4782.JPEG" alt="An image of the author in Bijeljina, Bosnia" />
+<div class="image-container">
+    <img src="images/IMG_4782.JPEG" alt="An image of the author in Bijeljina, Bosnia" />
+</div>
 <h2>Latest Projects</h2>
 <div 
     class="projects" 
     style=
-        "display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        "grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
         gap: 20px;"
 >
     {#each projects.slice(0,3) as p}
@@ -45,7 +50,7 @@
             grid-row: 2;
         }
     </style>
-    {#await fetch("https://api.github.com/users/sashajh2") }
+    <!-- {#await fetch("https://api.github.com/users/sashajh2") }
         <p>Loading...</p>
     {:then response}
         {#await response.json()}
@@ -73,5 +78,5 @@
         <p class="error">
             Something went wrong: {error.message}
         </p>
-    {/await}
+    {/await} -->
 </div>
