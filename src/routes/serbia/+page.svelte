@@ -11,6 +11,8 @@
         images = [
             'images/personal/serbia/bijeljina.webp',
             'images/personal/serbia/IMG_4729.JPG',
+            'images/personal/serbia/beograd.jpg',
+            'images/personal/serbia/slobimir.jpg',
         ];
     });
 
