@@ -16,7 +16,7 @@
         "description": "This study leverages advanced deep learning techniques, including CNNs and self-attention mechanisms, to uncover hidden demographic and linguistic patterns from handwriting samples. By exploring the 'written accent' phenomenon and integrating innovative hybrid models, we push the boundaries of handwriting analysis for applications in forensics and psychological diagnostics.",
         "year": "2024",
         "date": "May 10",
-        "skills": ["Machine Learning", "Computer Vision", "Final Project"],
+        "skills": ["Machine Learning", "Computer Vision", "Final Project", "Python"],
         "file": "files/6.8301/Final Report.pdf"
     },
     {
@@ -26,7 +26,7 @@
         "description": "This analysis explores the rise of corporate landlords in Boston, showing a significant increase in corporate ownership since 2004 and its effects on various neighborhoods. By introducing the 'Corporate Surplus' metric and comparing eviction patterns, it reveals surprising trends, challenging assumptions about corporate landlords' role in evictions while highlighting deeper, systemic factors influencing housing stability.",
         "year": "2024",
         "date": "Feb 27",
-        "skills": ["Data Analysis", "Tableau"],
+        "skills": ["Data Analysis", "Tableau", "HTML"],
         "file": "projects/a2.html"
     },
     {
@@ -36,7 +36,7 @@
         "description": "In just a hundred years, the U.S. population landscape has transformed dramatically, revealing striking shifts in age distribution and longevity between genders. Dive into the visualizations that expose the evolution of American society, from the youthful exuberance of the early 1900s to the burgeoning senior citizen demographic of the 21st century",
         "year": "2024",
         "date": "March 13",
-        "skills": ["Data Analysis", "Tableau"],
+        "skills": ["Data Analysis", "Tableau", "HTML"],
         "file": "projects/a3.html"
     },
     {
@@ -46,7 +46,7 @@
         "description": "Motivated by a fascination with public services and the complexities of crime trends, I delve into the alarming rise in civilian complaints against New York City police officers, challenging the narrative of improved policing amid societal change. This exploration not only scrutinizes the disturbing statistics of police misconduct since the 1980s but also uncovers the deeper implications of accountability, bias, and the ongoing struggle for justice in a city long hailed for its storied institutions.",
         "year": "2024",
         "date": "April 1",
-        "skills": ["Data Analysis", "Tableau"],
+        "skills": ["Data Analysis", "Tableau", "HTML"],
         "file": "projects/a4.html"
     }
 ]

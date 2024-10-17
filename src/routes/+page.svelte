@@ -10,6 +10,7 @@
     .image-container {
         width: 50%;
         margin: 0 auto;
+        margin-bottom: 20px;
     }
 </style>
 <svelte:head>
@@ -18,10 +19,10 @@
 <h1>Sasha Jovanovic-Hacon</h1>
 <p>
     Hello! I'm Sasha, a senior at MIT studying 
-    <a href="https://www.eecs.mit.edu/academics/undergraduate-programs/curriculum/6-4-artificial-intelligence-and-decision-making/" target="_blank">Artificial Intelligence and Decision Making</a>. 
-    With a solid foundation in mathematics, software engineering, and machine learning, I have spent years honing my skills in full-stack development and data analysis. 
-    I have a strong passion for statistical analysis, as it helps unravel complex relationships and enables informed decision-making. 
-    Outside of my studies, I enjoy outdoor activities like climbing and running, and I'm currently learning Serbian.
+    <a href="https://www.eecs.mit.edu/academics/undergraduate-programs/curriculum/6-4-artificial-intelligence-and-decision-making/" target="_blank">Artificial Intelligence and Decision Making</a>
+</p>
+<p> 
+    Originally from Salt Lake City, I’m passionate about exploring the intersection of technology, data, and real-world systems. Outside of my academic pursuits, I enjoy outdoor activities like climbing and running, which let me connect with the natural beauty I grew up around.
 </p>
 <div class="image-container">
     <img src="images/IMG_4782.JPEG" alt="An image of the author in Bijeljina, Bosnia" />
