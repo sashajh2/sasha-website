@@ -16,7 +16,7 @@
         "image": "images/a4/Police Brutality.jpg",
         "description": "This project develops a novel method to detect AI-generated text on social media using part-of-speech (POS) tagging. By analyzing linguistic patterns in AI- and human-generated tweets, our approach achieves 90% accuracy, even on short, informal texts. The method focuses on grammatical structures, offering robustness to paraphrasing attacks and improving social media integrity. Models include transformer-based and feedforward networks, with comparisons to existing tools like GPTZero.",
         "year": "2024",
-        "date": "December 10",
+        "date": "December 9",
         "skills": ["Machine Learning", "Data Analysis", "Gurobi", "Pandas"],
         "file": "files/6.C57/6_C571_Final_Project-2.pdf"
     },
