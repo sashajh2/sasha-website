@@ -3,6 +3,7 @@
     export let hLevel = 2;
 
     let isExpanded = false;
+    let poster = !!info.poster;
     function toggleExpand() {
         isExpanded = !isExpanded
     }
@@ -12,6 +13,9 @@
         } else if (info.url) {
             window.open(info.url, '_blank');
         }
+    }
+    function viewPoster() {
+        window.open(info.poster, '_blank')
     }
 </script>
 <style>
@@ -119,7 +123,13 @@
 
         <div class="button-container">
             <button on:click={handleClick}>View Project</button>
+            
         </div>
+        {#if poster}
+            <div class="button-container">
+                <button on:click={viewPoster}>View Poster</button>
+            </div>
+        {/if}
         <div class="skills-container">
             {#each info.skills as skill}
                 <button class="skill">{skill}</button>
