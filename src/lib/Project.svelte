@@ -105,6 +105,17 @@
         color: var(--secondary)
     }
 
+    @media (max-width: 600px) {
+        .title-container {
+        flex-direction: column;
+        align-items: flex-start;
+        }
+
+        h2 {
+        margin-bottom: 8px;
+        }
+    }
+
 </style>
 <article>
     <div class="title-container" on:click={toggleExpand}>

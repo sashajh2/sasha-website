@@ -43,15 +43,31 @@
 </style>
 <script>
     import {page} from '$app/stores';
+    import { onMount } from 'svelte';
+    import { writable } from 'svelte/store';
+    const isMobile = writable(false);
+
+    const updateMobileStatus = () => {
+        isMobile.set(window.innerWidth < 600);
+    };
+
+    onMount(() => {
+        updateMobileStatus();
+        window.addEventListener('resize', updateMobileStatus);
+        return () => {
+            window.removeEventListener('resize', updateMobileStatus);
+        };
+    });
+
     let pages = [
-	{url: "./", title: "Home"},
-	{url: "./projects", title: "Projects"},
-	{url: "./resume", title: "Resume"},
-    {url: "./personal", title: "Personal"},
-    {url: "./contact", title: "Contact"},
-    // {url: "./meta", title: "Meta"},
-    {url: "https://github.com/sashajh2", title: "Github"},
-];
+        {url: "./", title: "Home"},
+        {url: "./projects", title: "Projects"},
+        {url: "./resume", title: "Resume"},
+        {url: "./personal", title: "Personal"},
+        {url: "./contact", title: "Contact"},
+        // {url: "./meta", title: "Meta"},
+        {url: "https://github.com/sashajh2", title: "Github"},
+    ];
 
     let localStorage = globalThis.localStorage ?? {};
     let colorScheme = localStorage.colorScheme ?? "light dark";
