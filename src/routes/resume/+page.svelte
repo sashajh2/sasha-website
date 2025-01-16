@@ -34,7 +34,7 @@
     }
     ul {
         list-style-type: disc; 
-        padding-left: 20px;
+        padding-left: 30px;
     }
     ul li {
         display: block;
@@ -78,11 +78,20 @@
     <h2>Education</h2>
     <div class="article">
         <h3>Massachusetts Institute of Technology</h3>
-        <h4 class="location">Bachelor of Science, Mathematics and Computer Science; 4.7/5.0 GPA</h4>
+        <h4 class="location">
+            Bachelor of Science, Computer Science;   
+            <span>4.7/5.0 GPA; Aug 2021 - Dec 2024</span>
+        </h4>
         <ul>
-            <li>&bull; Expected Graduation: <time datetime="2024-12-01">December 2024</time></li>
-            <li>&bull; Relevant Coursework: Discrete Math, Algorithms 1, Algorithms 2, Machine Learning, Statistics and Probability, Fund. of Programming, Real Analysis, Data Visualization, Computer Vision</li>
-            <li>&bull; Societies and Activities: Varsity Lightweight Rowing, Phi Sigma Kappa (President)</li>
+            <li><b>&bull; Relevant Coursework: </b></li>
+                <div style="margin-left: 50px;">
+                    <ul>
+                        <li><b>&bull; Computer Science: </b> Algorithms 1, Algorithms 2, Machine Learning, Fund. of Programmng, Data Science, Dynamic Control Systems</li>
+                        <li><b>&bull; Mathematics: </b> Linear Algebra, Probability, Statistics, Discrete Math, Real Analysis, Differential Equations </li>
+                        <li><b>&bull; Project-Driven Classes: </b> Natural Language Processing, Computer Vision, Data Visualization</li>
+                    </ul>
+                </div>
+            <li><b>&bull; Societies and Activities: </b> Varsity Lightweight Rowing, Phi Sigma Kappa (President)</li>
         </ul>
     </div>
 </div>
