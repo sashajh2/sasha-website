@@ -61,10 +61,10 @@
 
     let pages = [
         {url: "./", title: "Home"},
-        {url: "./projects", title: "Projects"},
-        {url: "./resume", title: "Resume"},
-        {url: "./personal", title: "Personal"},
-        {url: "./contact", title: "Contact"},
+        {url: "./projects/", title: "Projects"},
+        {url: "./resume/", title: "Resume"},
+        {url: "./personal/", title: "Personal"},
+        {url: "./contact/", title: "Contact"},
         // {url: "./meta", title: "Meta"},
         {url: "https://github.com/sashajh2", title: "Github"},
     ];
