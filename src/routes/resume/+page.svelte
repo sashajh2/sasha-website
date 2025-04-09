@@ -66,7 +66,7 @@
 <svelte:head>
 	<title>Resume</title>
 </svelte:head>
-<a href="files/resume/Resume-2024 Updated-4.docx" download class="download-button">
+<a href="files/resume/Sasha_Jov_Hacon_Resume.docx" download class="download-button">
     <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M12 3v12m0 0l-3-3m3 3 3-3"/>
     </svg>
@@ -77,7 +77,16 @@
 <div class="section">
     <h2>Education</h2>
     <div class="article">
+    
         <h3>Massachusetts Institute of Technology</h3>
+        <h4 class="location">
+            Masters of Engineering, Computer Science;   
+            <span>Jan 2025 - Dec 2025</span>
+        </h4>
+        <ul>
+            <li>Advisor: Prof. Amar Gupta</li>
+            <li>Teaching Assistant for Computer Vision</li>
+        </ul>
         <h4 class="location">
             Bachelor of Science, Computer Science;   
             <span>4.7/5.0 GPA; Aug 2021 - Dec 2024</span>
@@ -96,7 +105,15 @@
     </div>
 </div>
 <div class="section">
-    <h2>Work Experience</h2>
+    <h2>Experience</h2>
+    <div class="article">
+        <h3>MIT CSAIL, Graduate Researcher</h3>
+        <h4 class="location">Cambirdge, MA <time datetime="2023-08-01">Feb 2025</time> - Present </h4>
+        <ul>
+            <li>&bull; Research on scalable fraud detection systems using hybrid NLP and deep learning methods to identify spoofed business names</li>
+            <li>&bull;Mentor 4 undergraduate students and coordinate team milestones</li>
+        </ul>
+    </div>
     <div class="article">
         <h3>Uncountable Inc, Software Engineering Intern</h3>
         <h4 class="location">San Francisco, CA <time datetime="2023-08-01">May 2024</time> - Aug 2024</h4>

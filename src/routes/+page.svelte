@@ -18,7 +18,7 @@
 </svelte:head>
 <h1>Sasha Jovanovic-Hacon</h1>
 <p>
-    Hello! I'm Sasha, a senior at MIT studying 
+    Hello! I'm Sasha, a Master of Engineering student at MIT studying 
     <a href="https://www.eecs.mit.edu/academics/undergraduate-programs/curriculum/6-4-artificial-intelligence-and-decision-making/" target="_blank">Artificial Intelligence and Decision Making</a>
 </p>
 <p> 
