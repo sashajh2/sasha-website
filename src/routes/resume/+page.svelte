@@ -84,8 +84,8 @@
             <span>Jan 2025 - Dec 2025</span>
         </h4>
         <ul>
-            <li>Advisor: Prof. Amar Gupta</li>
-            <li>Teaching Assistant for Computer Vision</li>
+            <li><b>&bull;Advisor: Prof. Amar Gupta</b></li>
+            <li><b>&bull;Teaching Assistant for Computer Vision</b></li>
         </ul>
         <h4 class="location">
             Bachelor of Science, Computer Science;   
@@ -111,7 +111,7 @@
         <h4 class="location">Cambirdge, MA <time datetime="2023-08-01">Feb 2025</time> - Present </h4>
         <ul>
             <li>&bull; Research on scalable fraud detection systems using hybrid NLP and deep learning methods to identify spoofed business names</li>
-            <li>&bull;Mentor 4 undergraduate students and coordinate team milestones</li>
+            <li>&bull; Mentor 4 undergraduate students and coordinate team milestones</li>
         </ul>
     </div>
     <div class="article">
