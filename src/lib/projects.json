@@ -1,5 +1,16 @@
 [
     {
+        "title": "Lightweight LLMs for Vascular Surgery Education",
+        "class": "6.7930",
+        "image": "images/a4/Police Brutality.jpg",
+        "description": "We curated a 451-question vascular surgery benchmark to evaluate lightweight, open-source LLMs for medical education. We tested prompt engineering, retrieval-augmented generation (RAG), and retrieval-augmented fine-tuning (RAFT), finding modest gains but significant accuracy gaps versus larger models. Results inform building interpretable, resource-efficient AI tools for clinical training.",
+        "year": "2025",
+        "date": "May 9",
+        "skills": ["Machine Learning", "Natural Language Processing", "Data Analysis", "Python", "Pandas"],
+        "file": "files/6.7930/MLHC_paper.pdf",
+        "poster": "files/6.7930/Poster.jpg"
+    },
+    {
         "title": "Investigating the Structure of AI-Generated Text",
         "class": "6.8611",
         "image": "images/a4/Police Brutality.jpg",
